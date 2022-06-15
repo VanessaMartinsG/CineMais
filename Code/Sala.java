@@ -5,7 +5,8 @@ public class Sala {
     private int capacidade;
     private boolean sala3d;
     private String descricao;
-    private Sessao sessoes[];
+    private Sessao sessoes[] = new Sessao[20];
+    private static int i = 0;
 
     public Sala(Cinema cinema, int numero, int capacidade, boolean sala3d, String descricao) {
         this.cinema = cinema;
@@ -13,6 +14,15 @@ public class Sala {
         this.capacidade = capacidade;
         this.sala3d = sala3d;
         this.descricao = descricao;
+    }
+
+    public Sessao[] getSessoes() {
+        return sessoes;
+    }
+
+    public void setSessoes(Sessao sessoes) {
+        this.sessoes[i] = sessoes;
+        i++;
     }
 
     public Cinema getCinema() {
