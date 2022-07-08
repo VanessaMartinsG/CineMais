@@ -3,6 +3,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.fxml.FXML;
 public class FilmesEmCartazController {
 
     @FXML
@@ -29,9 +42,14 @@ public class FilmesEmCartazController {
     @FXML
     private Label titleShopping;
 
+    // Add references to the controls in Layout2.fxml
     @FXML
-    void irIngresso01(ActionEvent event) {
+    private Label lblFromController1;
+    Bilheteria bilheteria = Bilheteria.getInstance();
 
+    @FXML
+    void irIngresso01(ActionEvent event) throws IOException {
+        
     }
 
     @FXML
@@ -60,8 +78,20 @@ public class FilmesEmCartazController {
     }
 
     @FXML
-    void voltarListaShoppings(ActionEvent event) {
+    void voltarListaShoppings(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
 
+        Parent root = FXMLLoader.load(getClass().getResource("listaShoppings.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void initialize(){
+        titleShopping.setText(bilheteria.getShoppingSelecionado());
     }
 
 }

@@ -2,6 +2,7 @@
 public class Bilheteria {
     private static Bilheteria instance = new Bilheteria();
     private DataBase db;
+    private String shoppingSelecionado;
 
     public Bilheteria(){
         this.db = new DataBase();
@@ -19,5 +20,12 @@ public class Bilheteria {
 
     public DataBase getDb(){
         return this.db;
+    }
+
+    public String getShoppingSelecionado(){
+        return this.shoppingSelecionado;
+    }
+    public void setShoppingSelecionado(String nome){
+        this.shoppingSelecionado = nome;
     }
 }

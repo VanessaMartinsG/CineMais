@@ -33,24 +33,58 @@ public class ListaShoppingsControllers {
     @FXML
     private Button btnSalvador;
 
-    @FXML
-    void abrirShoppingBahia(ActionEvent event) {
+    Bilheteria bilheteria = Bilheteria.getInstance();
 
+    @FXML
+    void abrirShoppingBahia(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
+        bilheteria.setShoppingSelecionado("Shopping da Bahia");
+        Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
+        
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void abrirShoppingBarra(ActionEvent event) {
-
+    void abrirShoppingBarra(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
+        bilheteria.setShoppingSelecionado("Shopping Barra");
+        Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
+        
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void abrirShoppingParalela(ActionEvent event) {
-
+    void abrirShoppingParalela(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
+        bilheteria.setShoppingSelecionado("Shopping Paralela");
+        Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
+        
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void abrirShoppingSalvador(ActionEvent event) {
-
+    void abrirShoppingSalvador(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
+        bilheteria.setShoppingSelecionado("Shopping Salvador");
+        Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
+        
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
