@@ -1,7 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -17,32 +16,41 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 
-public class LoginController {
+public class ListaShoppingsControllers {
 
     @FXML
-    private Button btnBackLogin;
+    private Button btnBack;
 
     @FXML
-    private Button btnLogar;
+    private Button btnBahia;
 
     @FXML
-    private Button criarCadastrar;
+    private Button btnBarra;
 
     @FXML
-    private TextField inputEmail;
+    private Button btnParalela;
 
     @FXML
-    private TextField inputSenha;
-
+    private Button btnSalvador;
 
     @FXML
-    void fazerLogin(ActionEvent event) {
-        // verifica se o usuario existe no json
+    void abrirShoppingBahia(ActionEvent event) {
+
     }
 
     @FXML
-    void irParaCadastro(ActionEvent event) {
-        
+    void abrirShoppingBarra(ActionEvent event) {
+
+    }
+
+    @FXML
+    void abrirShoppingParalela(ActionEvent event) {
+
+    }
+
+    @FXML
+    void abrirShoppingSalvador(ActionEvent event) {
+
     }
 
     @FXML

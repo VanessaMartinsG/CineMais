@@ -39,7 +39,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="listaShoppingsControllers">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ListaShoppingsControllers">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="450.0" prefWidth="640.0" style="-fx-background-color: #181818;" VBox.vgrow="ALWAYS">
          <children>
@@ -48,10 +48,13 @@
                   <Font name="Comic Sans MS Bold" size="24.0" />
                </font>
             </Label>
-            <Button layoutX="26.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: #181818;" text="&lt;&lt;" textFill="RED">
+            <Button fx:id="btnBack" layoutX="26.0" layoutY="31.0" mnemonicParsing="false" onAction="#voltarHome" style="-fx-background-color: #181818;" text="&lt;&lt;" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button fx:id="btnSalvador" layoutX="95.0" layoutY="145.0" mnemonicParsing="false" onAction="#abrirShoppingSalvador" prefHeight="42.0" prefWidth="189.0" style="-fx-background-color: #202020;" text="Shopping Salvador" textFill="WHITE">
                <font>

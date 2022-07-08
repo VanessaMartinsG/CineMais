@@ -25,7 +25,7 @@ public class DataBase {
         try {
 			//Salva no objeto JSONObject o que o parse tratou do arquivo
 			jsonObject = (JSONObject) parser.parse(new FileReader(
-					"C:/Users/aronc_x1x6ng/OneDrive/Documentos/CineMais/Code/data/db.json"));
+					"C:/Users/aronc_x1x6ng/OneDrive/Documentos/CineMais/CineMais/src/data/db.json"));
 
             JSONArray shoppings = (JSONArray) jsonObject.get("shopping");
             JSONArray id = (JSONArray) jsonObject.get("id");

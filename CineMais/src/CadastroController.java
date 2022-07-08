@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
-public class cadastroController {
+public class CadastroController {
 
     @FXML
     private Button btnBack;
@@ -31,12 +31,12 @@ public class cadastroController {
     private RadioButton radioSim;
 
     @FXML
-    void fazerCadastro(ActionEvent event) {
+    void backToLogin(ActionEvent event) {
 
     }
 
     @FXML
-    void voltarLogin(ActionEvent event) {
+    void fazerCadastro(ActionEvent event) {
 
     }
 

@@ -3,7 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class filmesEmCartazController {
+public class FilmesEmCartazController {
 
     @FXML
     private Button btn01;
@@ -60,7 +60,7 @@ public class filmesEmCartazController {
     }
 
     @FXML
-    void voltarListaShoṕpings(ActionEvent event) {
+    void voltarListaShoppings(ActionEvent event) {
 
     }
 
