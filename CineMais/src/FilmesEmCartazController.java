@@ -27,6 +27,30 @@ public class FilmesEmCartazController {
     private Button btnBack;
 
     @FXML
+    private Button btnDetalhes01;
+
+    @FXML
+    private Button btnDetalhes02;
+
+    @FXML
+    private Button btnDetalhes03;
+
+    @FXML
+    void irDetalhes01(ActionEvent event) {
+
+    }
+
+    @FXML
+    void irDetalhes02(ActionEvent event) {
+
+    }
+
+    @FXML
+    void irDetalhes03(ActionEvent event) {
+
+    }
+
+    @FXML
     private Label titleShopping;
 
     @FXML

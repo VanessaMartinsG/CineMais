@@ -10,7 +10,12 @@
         "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\javafx.web.jar",
         "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\javafx-swt.jar",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "c:\\Users\\Jadson\\Downloads\\json_simple-1.1.jar"
+=======
+        "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\json-simple-1.1.jar",
+        "c:\\Users\\compu\\Downloads\\json_simple-1.1.jar"
+>>>>>>> Stashed changes
 =======
         "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\json-simple-1.1.jar",
         "c:\\Users\\compu\\Downloads\\json_simple-1.1.jar"

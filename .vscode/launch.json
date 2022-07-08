@@ -5,13 +5,20 @@
     "version": "0.2.0",
     "configurations": [
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         {
             "type": "java",
             "name": "Launch main",
             "request": "launch",
             "mainClass": "main",
+<<<<<<< Updated upstream
             "projectName": "CineMais-main_bb129129",
+=======
+            "projectName": "CineMais_e79cb260",
+>>>>>>> Stashed changes
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
@@ -19,6 +26,7 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
+<<<<<<< Updated upstream
             "projectName": "CineMais-main_bb129129",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         },
@@ -37,6 +45,8 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
+=======
+>>>>>>> Stashed changes
             "projectName": "CineMais_e79cb260",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         },

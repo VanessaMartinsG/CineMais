@@ -1,7 +1,10 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 {"id":[1,2,3],"shopping":["Shopping Salvador", "Shopping Paralela", "Shopping Barra"],
 "email":"jadson@uneb.com","senha":"1234"
 =======
+=======
+>>>>>>> Stashed changes
 {
     "shoppings": [
         {
@@ -139,5 +142,8 @@
             "duracao": "3h10m"
         }
     ]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

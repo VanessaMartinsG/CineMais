@@ -59,7 +59,11 @@ public class CadastroController {
 
     }
 
+<<<<<<< Updated upstream
     void criarNovoUsuario() {
+=======
+    public Cliente criarNovoUsuario() {
+>>>>>>> Stashed changes
         cliente.setNome(inputNome.getText());
         cliente.setEmail(inputEmail.getText());
         cliente.setSenha(inputSenha.getText());
@@ -71,6 +75,10 @@ public class CadastroController {
             cliente.setEstudante(true);
         }
 
+<<<<<<< Updated upstream
+=======
+        return cliente;
+>>>>>>> Stashed changes
     }
 
 }
