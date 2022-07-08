@@ -1,11 +1,11 @@
 public class Cinema {
 
     private String nome;
-    private String shopping[];
-    private static int i = 0;
-
-    public Cinema(String nome) {
+    private String shopping;
+    
+    public Cinema(String nome, String shopping) {
         this.nome = nome;
+        this.shopping = shopping;
     }
 
     public String getNome() {
@@ -16,13 +16,12 @@ public class Cinema {
         this.nome = nome;
     }
 
-    public String[] getShopping() {
+    public String getShopping() {
         return shopping;
     }
 
     public void setShopping(String shopping) {
-        this.shopping[i] = shopping;
-        i++;
+        this.shopping = shopping;
     }
 
 }
