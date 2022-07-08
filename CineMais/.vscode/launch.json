@@ -1,9 +1,33 @@
 {
-    // Use o IntelliSense para saber mais sobre os atributos possíveis.
-    // Focalizar para exibir as descrições dos atributos existentes.
-    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "main",
+            "projectName": "CineMais_11e437d4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "CineMais_11e437d4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "main",
+            "projectName": "CineMais-Interface_ee8b1d5f",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
         {
             "type": "java",
             "name": "Launch Current File",
@@ -15,7 +39,7 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "CineMais_e79cb260",
+            "projectName": "CineMais-Interface_ee8b1d5f",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]

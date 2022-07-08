@@ -5,7 +5,7 @@ public class Sala {
     private int capacidade;
     private boolean sala3d;
     private String descricao;
-    private Sessao sessoes[] = new Sessao[20];
+    private Sessao sessoes[] = new Sessao[20]; // verificar utilização
     private static int i = 0;
 
     public Sala(Cinema cinema, int numero, int capacidade, boolean sala3d, String descricao) {

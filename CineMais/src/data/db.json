@@ -1,3 +1,143 @@
+<<<<<<< Updated upstream
 {"id":[1,2,3],"shopping":["Shopping Salvador", "Shopping Paralela", "Shopping Barra"],
 "email":"jadson@uneb.com","senha":"1234"
+=======
+{
+    "shoppings": [
+        {
+            "id": 1,
+            "shopping": "Shopping Salvador"
+        },
+        {
+            "id": 2,
+            "shopping": "Shopping Paralela"
+        },
+        {
+            "id": 3,
+            "shopping": "Shopping Barra"
+        },
+        {
+            "id": 4,
+            "shopping": "Shopping da Bahia"
+        }
+    ],
+    "clientes": [
+        {
+            "id": 1,
+            "nome": "maria",
+            "email": "maria@email.com",
+            "senha": "12345",
+            "estudante": "false",
+            "idade": "25",
+            "ingresso": "1"
+        }
+    ],
+    "data": [
+        {
+            "id": "1",
+            "dia": "08",
+            "mes": "07",
+            "ano": "2022",
+            "hora": "13",
+            "minuto": "50"
+        },
+        {
+            "id": "2",
+            "dia": "09",
+            "mes": "07",
+            "ano": "2022",
+            "hora": "17",
+            "minuto": "30"
+        },
+        {
+            "id": "3",
+            "dia": "08",
+            "mes": "07",
+            "ano": "2022",
+            "hora": "14",
+            "minuto": "00"
+        },
+        {
+            "id": "4",
+            "dia": "10",
+            "mes": "07",
+            "ano": "2022",
+            "hora": "19",
+            "minuto": "50"
+        },
+        {
+            "id": "5",
+            "dia": "11",
+            "mes": "07",
+            "ano": "2022",
+            "hora": "16",
+            "minuto": "00"
+        },
+        {
+            "id": "6",
+            "dia": "12",
+            "mes": "07",
+            "ano": "2022",
+            "hora": "20",
+            "minuto": "40"
+        }
+    ],
+    "sala": [
+        {
+            "id": "1",
+            "numero": "05",
+            "capacidade": "50",
+            "tipo": "3D",
+            "descricao": "xxxx",
+            "sessao": "04"
+        }
+    ],
+    "sessao": [
+        {
+            "id": "1",
+            "filme": "Vingadores: Ultimato",
+            "horario": "01",
+            "sala": "05"
+        }
+    ],
+    "filme": [
+        {
+            "id": "1",
+            "filme": "Vingadores: Ultimato",
+            "diretor": "Stan Lee",
+            "ator": "Chris Evans",
+            "duracao": "3h10m",
+            "faixaEtaria": "18",
+            "categoria": "Ação"
+        },
+        {
+            "id": "2",
+            "filme": "Piratas do Caribe",
+            "diretor": "Ronaldo",
+            "ator": "Jhonny Depp",
+            "duracao": "2h10m",
+            "faixaEtaria": "16",
+            "categoria": "Ação"
+        },
+        {
+            "id": "3",
+            "filme": "Velozes e Furiosos",
+            "diretor": "Arnaldo",
+            "ator": "Vin Diesel",
+            "duracao": "2h50m",
+            "faixaEtaria": "14",
+            "categoria": "Ação"
+        }
+    ],
+    "ingresso": [
+        {
+            "id": "1",
+            "cliente": "maria@email.com",
+            "preco": "25.50",
+            "sessao": "02",
+            "data": "01",
+            "duracao": "3h10m"
+        }
+    ]
+>>>>>>> Stashed changes
 }

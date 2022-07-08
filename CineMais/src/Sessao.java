@@ -1,13 +1,14 @@
 public class Sessao {
-
+    private int numero;
     private Filme filme;
-    private Data horario;
+    private Data horario; // verificar utilizacao
     private Sala sala;
 
-    public Sessao(Filme filme, Data horario, Sala sala) {
+    public Sessao(Filme filme, Data horario, Sala sala, int numero) {
         this.filme = filme;
         this.horario = horario;
         this.sala = sala;
+        this.numero = numero;
     }
 
     public Filme getFilme() {
@@ -34,4 +35,11 @@ public class Sessao {
         this.sala = sala;
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
 }

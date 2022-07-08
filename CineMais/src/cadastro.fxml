@@ -37,6 +37,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -65,8 +66,11 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <RadioButton fx:id="radioSim" layoutX="397.0" layoutY="186.0" mnemonicParsing="false" text="Sim" textFill="#666666" />
-            <RadioButton fx:id="radioNao" layoutX="465.0" layoutY="186.0" mnemonicParsing="false" text="Não" textFill="#666666" />
+            <RadioButton fx:id="radioSim" layoutX="397.0" layoutY="186.0" mnemonicParsing="false" text="Sim" textFill="#666666">
+               <toggleGroup>
+                  <ToggleGroup fx:id="estudante" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="radioNao" layoutX="465.0" layoutY="186.0" mnemonicParsing="false" selected="true" text="Não" textFill="#666666" toggleGroup="$estudante" />
             <TextField fx:id="inputEmail" layoutX="109.0" layoutY="222.0" prefHeight="32.0" prefWidth="431.0" style="-fx-background-color: #202020;" text="Email">
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
