@@ -15,7 +15,7 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "CineMais-Interface_f3eb1290",
+            "projectName": "CineMais_e79cb260",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]

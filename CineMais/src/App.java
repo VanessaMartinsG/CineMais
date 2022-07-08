@@ -27,7 +27,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cadastro.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
 
