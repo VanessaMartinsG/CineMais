@@ -18,6 +18,9 @@ public class LoginController {
     private TextField inputEmail;
 
     @FXML
+    private TextField inputSenha;
+
+    @FXML
     void fazerLogin(ActionEvent event) {
 
     }
@@ -33,4 +36,3 @@ public class LoginController {
     }
 
 }
-
