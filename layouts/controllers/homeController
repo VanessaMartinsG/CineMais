@@ -1,0 +1,23 @@
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+public class homeController {
+
+    @FXML
+    private Button btnComprarIngresso;
+
+    @FXML
+    private Button btnFilmesCartaz;
+
+    @FXML
+    void irLogin(ActionEvent event) {
+
+    }
+
+    @FXML
+    void irListaShoppings(ActionEvent event) {
+
+    }
+
+}
