@@ -16,6 +16,8 @@ public class Bilheteria {
         for (int i = 0; i < this.db.getCinemas().size(); i++) {
             System.out.println("(" + i + ") " + this.db.getCinemas().get(i).getShopping());
         }
+
+        System.out.println(this.db.getEmail() + this.db.getSenha());
     }
 
     public DataBase getDb(){

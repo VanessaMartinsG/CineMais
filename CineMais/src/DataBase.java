@@ -15,6 +15,8 @@ public class DataBase {
 	//Cria o parse de tratamento
 	JSONParser parser = new JSONParser();
     private List<Cinema> cinemas;
+    String emailV;
+    String senhaV;
  
 
     public DataBase(){
@@ -25,13 +27,19 @@ public class DataBase {
         try {
 			//Salva no objeto JSONObject o que o parse tratou do arquivo
 			jsonObject = (JSONObject) parser.parse(new FileReader(
-					"C:/Users/aronc_x1x6ng/OneDrive/Documentos/CineMais/CineMais/src/data/db.json"));
+					"C:/Users/Jadson/Documents/CineMais-main/CineMais/src/data/db.json"));
 
+                    emailV = (String) jsonObject.get("email");
+                    senhaV = (String) jsonObject.get("senha");
             JSONArray shoppings = (JSONArray) jsonObject.get("shopping");
             JSONArray id = (JSONArray) jsonObject.get("id");
             for (int i = 0; i < shoppings.size(); i++) {
                 this.cinemas.add(new Cinema("CineMais", shoppings.get(i).toString()));
             }
+
+           
+
+            
 		}
 		//Trata as exceptions que podem ser lançadas no decorrer do processo
 		catch (FileNotFoundException e) {
@@ -45,6 +53,14 @@ public class DataBase {
 
     public List<Cinema> getCinemas(){
         return this.cinemas;
+    }
+
+    public String getEmail(){
+        return this.emailV;
+    }
+
+    public String getSenha(){
+        return this.senhaV;
     }
     
     
