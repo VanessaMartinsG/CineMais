@@ -1,11 +1,15 @@
 public class Cliente {
     private String nome;
+    private String email;
+    private String senha;
     private boolean estudante;
     private int idade;
     private Ingresso ingresso;
 
-    public Cliente(String nome, boolean estudante, int idade, Ingresso ingresso) {
+    public Cliente(String nome, String email, String senha, boolean estudante, int idade, Ingresso ingresso) {
         this.nome = nome;
+        this.email = email;
+        this.senha = senha;
         this.estudante = estudante;
         this.idade = idade;
         this.ingresso = ingresso;
@@ -41,6 +45,22 @@ public class Cliente {
 
     public void setIngresso(Ingresso ingresso) {
         this.ingresso = ingresso;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
 }
