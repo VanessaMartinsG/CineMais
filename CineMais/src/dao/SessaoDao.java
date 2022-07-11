@@ -37,13 +37,56 @@ public class SessaoDao {
                 
 
                 Filme filme = new Filme();
-                filme.setIdFilme(rs.getInt("idfilme"));
+                filme.setIdFilme(rs.getInt("filmeId"));
                 FilmeDao fDao = new FilmeDao();
                 sessao.setFilme(fDao.select(filme));
 
                 // IngressoDao iDao = new IngressoDao();
                 // sessao.setIngressos(iDao.select(sessao));
                 // sessoes.add(sessao);
+            }
+
+            this.conn.close();
+            stmt.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return sessoes;
+    }
+
+    public List<Sessao> select(String data, int idCinema){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Sessao> sessoes = new ArrayList<>();
+
+        try {
+            stmt = this.conn.prepareStatement("SELECT * FROM " + this.Table + " WHERE data=? and cinemaId=?");
+            stmt.setString(1, data);
+            stmt.setInt(2, idCinema);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Sessao sessao = new Sessao();
+
+                sessao.setNumeroSessaoId(rs.getInt("numero"));
+                sessao.setHorario(rs.getString("horario"));
+                sessao.setData(rs.getString("data"));
+                sessao.setCinemaId(rs.getInt("cinemaId"));
+
+                Filme filme = new Filme();
+                filme.setIdFilme(rs.getInt("filmeId"));
+                FilmeDao fDao = new FilmeDao();
+                sessao.setFilme(fDao.select(filme));
+
+                Sala sala = new Sala();
+                sala.setIdSala(rs.getInt("salaId"));
+                SalaDao fSalaDao = new SalaDao();
+                sessao.setSala(fSalaDao.select(sala));
+
+                sessoes.add(sessao);
             }
 
             this.conn.close();
@@ -71,12 +114,12 @@ public class SessaoDao {
             while (rs.next()) {
                 Sessao sessao = new Sessao();
 
-                sessao.setNumeroSessaoId(rs.getInt("id"));
+                sessao.setNumeroSessaoId(rs.getInt("numero"));
                 sessao.setHorario(rs.getString("horario"));
                 
 
                 Filme filme = new Filme();
-                filme.setIdFilme(rs.getInt("idfilme"));
+                filme.setIdFilme(rs.getInt("filmeId"));
                 FilmeDao fDao = new FilmeDao();
                 sessao.setFilme(fDao.select(filme));
 

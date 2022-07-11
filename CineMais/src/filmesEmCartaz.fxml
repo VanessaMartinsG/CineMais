@@ -61,22 +61,22 @@
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="24.0" layoutY="89.0" prefHeight="23.0" prefWidth="179.0" text="Vingadores: Ultimato" textFill="WHITE">
+                  <Label fx:id="filme1" layoutX="24.0" layoutY="89.0" prefHeight="23.0" prefWidth="179.0" text="Vingadores: Ultimato" textFill="WHITE">
                      <font>
                         <Font name="Comic Sans MS Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="24.0" layoutY="153.0" prefHeight="23.0" prefWidth="179.0" text="Piratas do Caribe" textFill="WHITE">
+                  <Label fx:id="filme2" layoutX="24.0" layoutY="153.0" prefHeight="23.0" prefWidth="179.0" text="Piratas do Caribe" textFill="WHITE">
                      <font>
                         <Font name="Comic Sans MS Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="24.0" layoutY="217.0" prefHeight="23.0" prefWidth="179.0" text="Velozes e Furiosos" textFill="WHITE">
+                  <Label fx:id="filme3" layoutX="24.0" layoutY="217.0" prefHeight="23.0" prefWidth="179.0" text="Velozes e Furiosos" textFill="WHITE">
                      <font>
                         <Font name="Comic Sans MS Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn01" layoutX="232.0" layoutY="86.0" mnemonicParsing="false" onAction="#irIngresso01" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="13:50" textFill="WHITE">
+                  <Button fx:id="btn01Filme1" layoutX="232.0" layoutY="86.0" mnemonicParsing="false" onAction="#irIngresso01" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="13:50" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -84,7 +84,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn03" layoutX="232.0" layoutY="150.0" mnemonicParsing="false" onAction="#irIngresso03" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="14:00" textFill="WHITE">
+                  <Button fx:id="btn03Filme2" layoutX="232.0" layoutY="150.0" mnemonicParsing="false" onAction="#irIngresso03" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="14:00" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -92,7 +92,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn05" layoutX="232.0" layoutY="214.0" mnemonicParsing="false" onAction="#irIngresso05" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="16:00" textFill="WHITE">
+                  <Button fx:id="btn05Filme3" layoutX="232.0" layoutY="214.0" mnemonicParsing="false" onAction="#irIngresso05" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="16:00" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -100,7 +100,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn06" layoutX="367.0" layoutY="214.0" mnemonicParsing="false" onAction="#irIngresso06" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="20:40" textFill="WHITE">
+                  <Button fx:id="btn06Filme3" layoutX="367.0" layoutY="214.0" mnemonicParsing="false" onAction="#irIngresso06" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="20:40" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -108,7 +108,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn04" layoutX="367.0" layoutY="150.0" mnemonicParsing="false" onAction="#irIngresso04" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="19:50" textFill="WHITE">
+                  <Button fx:id="btn04Filme2" layoutX="367.0" layoutY="150.0" mnemonicParsing="false" onAction="#irIngresso04" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="19:50" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -116,7 +116,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn02" layoutX="367.0" layoutY="86.0" mnemonicParsing="false" onAction="#irIngresso02" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="17:30" textFill="WHITE">
+                  <Button fx:id="btn02Filme1" layoutX="367.0" layoutY="86.0" mnemonicParsing="false" onAction="#irIngresso02" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #313131; -fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="17:30" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -124,12 +124,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label layoutX="233.0" layoutY="69.0" text="Sala 02  3D 08/07" textFill="WHITE" />
-                  <Label layoutX="368.0" layoutY="69.0" text="Sala 05  4D 09/07" textFill="WHITE" />
-                  <Label layoutX="233.0" layoutY="136.0" text="Sala 07  2D 08/07" textFill="WHITE" />
-                  <Label layoutX="368.0" layoutY="136.0" text="Sala 08  3D 10/07" textFill="WHITE" />
-                  <Label layoutX="233.0" layoutY="197.0" text="Sala 04  2D 11/07" textFill="WHITE" />
-                  <Label layoutX="368.0" layoutY="197.0" text="Sala 03  3D 12/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo01" layoutX="233.0" layoutY="69.0" text="Sala 02  3D 08/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo02" layoutX="368.0" layoutY="69.0" text="Sala 05  4D 09/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo03" layoutX="233.0" layoutY="136.0" text="Sala 07  2D 08/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo04" layoutX="368.0" layoutY="136.0" text="Sala 08  3D 10/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo05" layoutX="233.0" layoutY="197.0" text="Sala 04  2D 11/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo06" layoutX="368.0" layoutY="197.0" text="Sala 03  3D 12/07" textFill="WHITE" />
                </children>
             </Pane>
          </children>

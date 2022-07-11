@@ -28,12 +28,12 @@ public class FilmeDao {
             while (rs.next()) {
                 Filme filme = new Filme();
                 filme.setIdFilme(rs.getInt("id"));
-                filme.setFilme(rs.getString("titulo"));
+                filme.setNomeFilme(rs.getString("titulo"));
                 filme.setDiretor(rs.getString("diretor"));
                 filme.setAtor(rs.getString("atorPrincipal"));
                 filme.setDuracao(rs.getString("duracao"));
                 filme.setFaixaEtaria(rs.getInt("faixaEtaria"));
-                filme.setCategoria(rs.getString("classificacao"));
+                filme.setCategoria(rs.getString("categoria"));
 
                 filmes.add(filme);
             }
@@ -52,18 +52,18 @@ public class FilmeDao {
         ResultSet rs = null;
 
         try {
-            stmt = this.conn.prepareStatement("SELECT * FROM " + this.Table + " WHERE id = ?");
+            stmt = this.conn.prepareStatement("SELECT * FROM " + this.Table + " WHERE idfilme = ?");
             stmt.setInt(1, filme.getIdFilme());
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                filme.setIdFilme(rs.getInt("id"));
-                filme.setFilme(rs.getString("titulo"));
+                filme.setIdFilme(rs.getInt("idfilme"));
+                filme.setNomeFilme(rs.getString("titulo"));
                 filme.setDiretor(rs.getString("diretor"));
                 filme.setAtor(rs.getString("atorPrincipal"));
                 filme.setDuracao(rs.getString("duracao"));
                 filme.setFaixaEtaria(rs.getInt("faixaEtaria"));
-                filme.setCategoria(rs.getString("classificacao"));
+                filme.setCategoria(rs.getString("categoria"));
             }
 
             this.conn.close();

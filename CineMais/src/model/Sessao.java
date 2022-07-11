@@ -6,6 +6,8 @@ public class Sessao {
     private Filme filme;
     private String horario;
     private Sala sala;
+    private String data;
+    private int cinemaId;
 
     public Sessao() {
     
@@ -41,6 +43,22 @@ public class Sessao {
 
     public void setSala(Sala sala) {
         this.sala = sala;
+    }
+
+    public String getData(){
+        return this.data;
+    }
+
+    public void setData(String novaData){
+        this.data = novaData;
+    }
+
+    public int getCinemaId(){
+        return this.cinemaId;
+    }
+
+    public void setCinemaId(int novoCinemaId){
+        this.cinemaId = novoCinemaId;
     }
 
 }

@@ -2,7 +2,7 @@ package model;
 public class Filme {
 
     private int idFilme;
-    private String filme;
+    private String nomeFilme;
     private String diretor;
     private String ator;
     private String duracao;
@@ -21,12 +21,12 @@ public class Filme {
         this.idFilme = novoId;
     }
 
-    public String getFilme() {
-        return filme;
+    public String getNomeFilme() {
+        return nomeFilme;
     }
 
-    public void setFilme(String filme) {
-        this.filme = filme;
+    public void setNomeFilme(String filme) {
+        this.nomeFilme = filme;
     }
 
     public String getDiretor() {
