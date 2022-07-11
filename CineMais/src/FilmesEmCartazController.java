@@ -17,22 +17,22 @@ import model.Sessao;
 public class FilmesEmCartazController {
 
     @FXML
-    private Button btn01;
+    private Button btn01Filme1;
 
     @FXML
-    private Button btn02;
+    private Button btn02Filme1;
 
     @FXML
-    private Button btn03;
+    private Button btn03Filme2;
 
     @FXML
-    private Button btn04;
+    private Button btn04Filme2;
 
     @FXML
-    private Button btn05;
+    private Button btn05Filme3;
 
     @FXML
-    private Button btn06;
+    private Button btn06Filme3;
 
     @FXML
     private Button btnBack;
@@ -107,6 +107,12 @@ public class FilmesEmCartazController {
             filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
             filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
             filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+            btn01Filme1.setText(sessoes.get(0).getHorario());
+            btn02Filme1.setText(sessoes.get(1).getHorario());
+            btn03Filme2.setText(sessoes.get(2).getHorario());
+            btn04Filme2.setText(sessoes.get(3).getHorario());
+            btn05Filme3.setText(sessoes.get(4).getHorario());
+            btn06Filme3.setText(sessoes.get(5).getHorario());
             break;
             case "Shopping Barra":
             sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08",2);
