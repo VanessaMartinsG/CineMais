@@ -35,6 +35,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -88,6 +90,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <ImageView fx:id="iconUser" fitHeight="35.0" fitWidth="36.0" layoutX="590.0" layoutY="18.0">
+               <image>
+                  <Image url="@../../../../../../../Pictures/rascunho/symbole-masculin-icone-l-utilisateur-rouge.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
          </children>
     </AnchorPane>
   </children>

@@ -32,42 +32,31 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contaDeletadaController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #181818;" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="240.0" layoutY="92.0" opacity="0.9" text="CineMais" textFill="#da0000">
+            <Label layoutX="206.0" layoutY="52.0" text="CONTA DELETADA" textFill="RED">
                <font>
-                  <Font name="Comic Sans MS Bold" size="38.0" />
+                  <Font name="Comic Sans MS Bold" size="24.0" />
                </font>
             </Label>
-            <Button fx:id="btnFilmesCartaz" layoutX="105.0" layoutY="245.0" mnemonicParsing="false" onAction="#ViewFilmesEmCartaz" prefHeight="46.0" prefWidth="177.0" style="-fx-background-color: #202020; -fx-background-radius: 10px; -fx-border-color: #ffffff; -fx-border-width: 0.05px; -fx-border-radius: 10px;" text="Filmes em cartaz" textFill="WHITE">
+            <Button fx:id="btnBack" layoutX="7.0" layoutY="20.0" mnemonicParsing="false" onAction="#voltarHome" style="-fx-background-color: #181818;" text="&lt;&lt;" textFill="RED">
                <font>
-                  <Font name="Comic Sans MS Bold Italic" size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnComprarIngresso" layoutX="353.0" layoutY="245.0" mnemonicParsing="false" onAction="#GoToLogin" prefHeight="46.0" prefWidth="177.0" style="-fx-background-color: #202020; -fx-background-radius: 10px; -fx-border-color: #ffffff; -fx-border-width: 0.05px; -fx-border-radius: 10px;" text="Comprar ingresso" textFill="WHITE">
+            <Label layoutX="178.0" layoutY="155.0" prefHeight="71.0" prefWidth="284.0" text="Conta deletada com sucesso!!" textFill="WHITE">
                <font>
-                  <Font name="Comic Sans MS Bold Italic" size="18.0" />
+                  <Font name="Comic Sans MS Bold" size="20.0" />
                </font>
-            </Button>
-            <ImageView fx:id="iconUser" fitHeight="35.0" fitWidth="36.0" layoutX="590.0" layoutY="14.0">
-               <image>
-                  <Image url="@../../../../../../../Pictures/rascunho/symbole-masculin-icone-l-utilisateur-rouge.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
+            </Label>
          </children>
     </AnchorPane>
   </children>
