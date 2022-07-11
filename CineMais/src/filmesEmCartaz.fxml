@@ -124,12 +124,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label layoutX="233.0" layoutY="69.0" text="Sala 02  3D 08/07" textFill="WHITE" />
-                  <Label layoutX="368.0" layoutY="69.0" text="Sala 05  4D 09/07" textFill="WHITE" />
-                  <Label layoutX="233.0" layoutY="136.0" text="Sala 07  2D 08/07" textFill="WHITE" />
-                  <Label layoutX="368.0" layoutY="136.0" text="Sala 08  3D 10/07" textFill="WHITE" />
-                  <Label layoutX="233.0" layoutY="197.0" text="Sala 04  2D 11/07" textFill="WHITE" />
-                  <Label layoutX="368.0" layoutY="197.0" text="Sala 03  3D 12/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo01" layoutX="233.0" layoutY="69.0" text="Sala 02  3D 08/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo02" layoutX="368.0" layoutY="69.0" text="Sala 05  4D 09/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo03" layoutX="233.0" layoutY="136.0" text="Sala 07  2D 08/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo04" layoutX="368.0" layoutY="136.0" text="Sala 08  3D 10/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo05" layoutX="233.0" layoutY="197.0" text="Sala 04  2D 11/07" textFill="WHITE" />
+                  <Label fx:id="infoSalaTipo06" layoutX="368.0" layoutY="197.0" text="Sala 03  3D 12/07" textFill="WHITE" />
                </children>
             </Pane>
          </children>

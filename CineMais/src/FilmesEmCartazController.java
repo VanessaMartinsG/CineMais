@@ -18,37 +18,38 @@ public class FilmesEmCartazController {
 
     @FXML
     private Button btn01Filme1;
-
     @FXML
     private Button btn02Filme1;
-
     @FXML
     private Button btn03Filme2;
-
     @FXML
     private Button btn04Filme2;
-
     @FXML
     private Button btn05Filme3;
-
     @FXML
     private Button btn06Filme3;
-
     @FXML
     private Button btnBack;
-
     @FXML
     private Label titleShopping;
-
     @FXML
     private Label filme1;
-
     @FXML
     private Label filme2;
-
     @FXML
     private Label filme3;
-
+    @FXML
+    private Label infoSalaTipo01;
+    @FXML
+    private Label infoSalaTipo02;
+    @FXML
+    private Label infoSalaTipo03;
+    @FXML
+    private Label infoSalaTipo04;
+    @FXML
+    private Label infoSalaTipo05;
+    @FXML
+    private Label infoSalaTipo06;
     // Add references to the controls in Layout2.fxml
     @FXML
     private Label lblFromController1;
@@ -113,6 +114,8 @@ public class FilmesEmCartazController {
             btn04Filme2.setText(sessoes.get(3).getHorario());
             btn05Filme3.setText(sessoes.get(4).getHorario());
             btn06Filme3.setText(sessoes.get(5).getHorario());
+            setDataTipoSala(sessoes);
+            
             break;
             case "Shopping Barra":
             sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08",2);
@@ -133,6 +136,26 @@ public class FilmesEmCartazController {
             filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
             break;
         }
+    }
+
+    public void setDataTipoSala(List<Sessao> sessoes){
+        if(sessoes.get(0).getSala().isSala3d()) infoSalaTipo01.setText("Sala:"+sessoes.get(0).getSala().getNumero()+ "  " + "3D");
+            else infoSalaTipo01.setText("Sala:"+sessoes.get(0).getSala().getNumero()+ "  " + "2D");
+            
+            if(sessoes.get(1).getSala().isSala3d()) infoSalaTipo02.setText("Sala:"+sessoes.get(1).getSala().getNumero()+ "  " + "3D");
+            else infoSalaTipo02.setText("Sala:"+sessoes.get(1).getSala().getNumero()+ "  " + "2D");
+            
+            if(sessoes.get(2).getSala().isSala3d()) infoSalaTipo03.setText("Sala:"+sessoes.get(2).getSala().getNumero()+ "  " + "3D");
+            else infoSalaTipo03.setText("Sala:"+sessoes.get(2).getSala().getNumero()+ "  " + "2D");
+            
+            if(sessoes.get(3).getSala().isSala3d()) infoSalaTipo04.setText("Sala:"+sessoes.get(3).getSala().getNumero()+ "  " + "3D");
+            else infoSalaTipo04.setText("Sala:"+sessoes.get(3).getSala().getNumero()+ "  " + "2D");
+            
+            if(sessoes.get(4).getSala().isSala3d()) infoSalaTipo05.setText("Sala:"+sessoes.get(4).getSala().getNumero()+ "  " + "3D");
+            else infoSalaTipo05.setText("Sala:"+sessoes.get(4).getSala().getNumero()+ "  " + "2D");
+            
+            if(sessoes.get(5).getSala().isSala3d()) infoSalaTipo06.setText("Sala:"+sessoes.get(5).getSala().getNumero()+ "  " + "3D");
+            else infoSalaTipo06.setText("Sala:"+sessoes.get(5).getSala().getNumero()+ "  " + "2D");
     }
 
 }
