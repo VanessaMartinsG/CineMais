@@ -4,18 +4,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.fxml.FXML;
+import model.Sessao;
+
 public class FilmesEmCartazController {
 
     @FXML
@@ -41,6 +39,15 @@ public class FilmesEmCartazController {
 
     @FXML
     private Label titleShopping;
+
+    @FXML
+    private Label filme1;
+
+    @FXML
+    private Label filme2;
+
+    @FXML
+    private Label filme3;
 
     // Add references to the controls in Layout2.fxml
     @FXML
@@ -91,7 +98,35 @@ public class FilmesEmCartazController {
 
     @FXML
     void initialize(){
+        List<Sessao> sessoes = new ArrayList<>();
         titleShopping.setText(bilheteria.getShoppingSelecionado());
+        
+        switch(bilheteria.getShoppingSelecionado()){
+            case "Shopping Salvador":
+            sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08",1);
+            filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
+            filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
+            filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+            break;
+            case "Shopping Barra":
+            sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08",2);
+            filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
+            filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
+            filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+            break;
+            case "Shopping Paralela":
+            sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08",3);
+            filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
+            filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
+            filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+            break;
+            case "Shopping da Bahia":
+            sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08",4);
+            filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
+            filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
+            filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+            break;
+        }
     }
 
 }

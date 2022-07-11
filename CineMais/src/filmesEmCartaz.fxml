@@ -61,17 +61,17 @@
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="24.0" layoutY="89.0" prefHeight="23.0" prefWidth="179.0" text="Vingadores: Ultimato" textFill="WHITE">
+                  <Label fx:id="filme1" layoutX="24.0" layoutY="89.0" prefHeight="23.0" prefWidth="179.0" text="Vingadores: Ultimato" textFill="WHITE">
                      <font>
                         <Font name="Comic Sans MS Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="24.0" layoutY="153.0" prefHeight="23.0" prefWidth="179.0" text="Piratas do Caribe" textFill="WHITE">
+                  <Label fx:id="filme2" layoutX="24.0" layoutY="153.0" prefHeight="23.0" prefWidth="179.0" text="Piratas do Caribe" textFill="WHITE">
                      <font>
                         <Font name="Comic Sans MS Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="24.0" layoutY="217.0" prefHeight="23.0" prefWidth="179.0" text="Velozes e Furiosos" textFill="WHITE">
+                  <Label fx:id="filme3" layoutX="24.0" layoutY="217.0" prefHeight="23.0" prefWidth="179.0" text="Velozes e Furiosos" textFill="WHITE">
                      <font>
                         <Font name="Comic Sans MS Bold" size="16.0" />
                      </font>

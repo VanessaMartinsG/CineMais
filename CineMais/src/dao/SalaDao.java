@@ -32,7 +32,7 @@ public class SalaDao {
                 sala = new Sala();
                 
                 
-                sala.setNumero(rs.getInt("id"));
+                sala.setNumero(rs.getInt("numero"));
                 sala.setCapacidade(rs.getInt("capacidade"));
                 sala.setSala3d(rs.getBoolean("sala3d"));
                 sala.setDescricao(rs.getString("descricao"));
@@ -54,4 +54,29 @@ public class SalaDao {
         return salas;
     }
 
+    public Sala select(Sala sala) {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            stmt = this.conn.prepareStatement("SELECT * FROM " + this.Table + " WHERE salaId = ?");
+            stmt.setInt(1, sala.getIdSala());
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                sala.setNumero(rs.getInt("numero"));
+                sala.setCapacidade(rs.getInt("capacidade"));
+                sala.setSala3d(rs.getBoolean("sala3d"));
+                sala.setDescricao(rs.getString("descricao"));
+                sala.setIdSala(rs.getInt("salaId"));
+            }
+
+            this.conn.close();
+            stmt.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return sala;
+    }
 }
