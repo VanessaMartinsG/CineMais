@@ -24,8 +24,7 @@ public class main extends Application{
         System.out.println("teste");
         Bilheteria bilheteria = Bilheteria.getInstance();
         
-        bilheteria.getDb().initDb();
-        bilheteria.listaDbInterface();
+        bilheteria.getCinemas();
         launch(args);
     }
     

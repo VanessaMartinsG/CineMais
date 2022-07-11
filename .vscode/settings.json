@@ -9,7 +9,8 @@
         "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\javafx.swing.jar",
         "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\javafx.web.jar",
         "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\javafx-swt.jar",
-        "c:\\Users\\Jadson\\Downloads\\json_simple-1.1.jar"
+        "c:\\Users\\Jadson\\Downloads\\json_simple-1.1.jar",
+        "CineMais/lib/mysql-connector-java-8.0.29.jar"
     ],
     "java.project.sourcePaths": [
         "CineMais\\src"

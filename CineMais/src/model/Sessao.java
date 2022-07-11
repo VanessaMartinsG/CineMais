@@ -1,13 +1,22 @@
+package model;
+
 public class Sessao {
 
+    private int numeroSessaoId;
     private Filme filme;
-    private Data horario;
+    private String horario;
     private Sala sala;
 
-    public Sessao(Filme filme, Data horario, Sala sala) {
-        this.filme = filme;
-        this.horario = horario;
-        this.sala = sala;
+    public Sessao() {
+    
+    }
+
+    public int getNumeroSessaoId(){
+        return this.numeroSessaoId;
+    }
+
+    public void setNumeroSessaoId(int novoId){
+        this.numeroSessaoId = novoId;
     }
 
     public Filme getFilme() {
@@ -18,11 +27,11 @@ public class Sessao {
         this.filme = filme;
     }
 
-    public Data getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(Data horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 

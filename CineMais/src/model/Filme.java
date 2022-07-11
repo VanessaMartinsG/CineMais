@@ -1,5 +1,7 @@
+package model;
 public class Filme {
 
+    private int idFilme;
     private String filme;
     private String diretor;
     private String ator;
@@ -7,13 +9,16 @@ public class Filme {
     private int faixaEtaria;
     private String categoria;
 
-    public Filme(String filme, String diretor, String ator, String duracao, int faixaEtaria, String categoria) {
-        this.filme = filme;
-        this.diretor = diretor;
-        this.ator = ator;
-        this.duracao = duracao;
-        this.faixaEtaria = faixaEtaria;
-        this.categoria = categoria;
+    public Filme() {
+        
+    }
+
+    public int getIdFilme(){
+        return idFilme;
+    }
+
+    public void setIdFilme(int novoId){
+        this.idFilme = novoId;
     }
 
     public String getFilme() {

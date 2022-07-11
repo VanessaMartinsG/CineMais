@@ -1,11 +1,12 @@
+package model;
+
 public class Cinema {
 
     private String nome;
     private String shopping;
     
-    public Cinema(String nome, String shopping) {
-        this.nome = nome;
-        this.shopping = shopping;
+    public Cinema() {
+        
     }
 
     public String getNome() {

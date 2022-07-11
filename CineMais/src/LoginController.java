@@ -39,35 +39,36 @@ public class LoginController {
     void fazerLogin(ActionEvent event) throws IOException {
         // verifica se o usuario existe no json
         Bilheteria bilheteria = Bilheteria.getInstance();
-        bilheteria.getDb().initDb();
-        bilheteria.listaDbInterface();
+        //bilheteria.getDb().initDb();
+        //bilheteria.listaDbInterface();
         
         
-       String emailTF = inputEmail.getText();
-       String senhaTF = inputSenha.getText();
+    //    String emailTF = inputEmail.getText();
+    //    String senhaTF = inputSenha.getText();
 
-       String emailDB = bilheteria.getDb().getEmail();
-       String senhaDB = bilheteria.getDb().getSenha();
+    //    String emailDB = bilheteria.getDb().getEmail();
+    //    String senhaDB = bilheteria.getDb().getSenha();
 
-       if(emailTF.equals(emailDB)){
-            if(senhaTF.equals(senhaDB)){
-                Stage stage;
-                Scene scene;
-        
-                Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                scene = new Scene(root, 640, 400);
-                stage.setScene(scene);
-                stage.show();
+        Stage stage;
+        Scene scene;
+
+        Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
+    //    if(emailTF.equals(emailDB)){
+    //         if(senhaTF.equals(senhaDB)){
+                
 
 
-            }
-            else{
-                System.out.println("Senha errada");
-            }
-        }else{
-            System.out.println("Email erradao");
-        }
+    //         }
+    //         else{
+    //             System.out.println("Senha errada");
+    //         }
+    //     }else{
+    //         System.out.println("Email erradao");
+    //     }
     
         
 

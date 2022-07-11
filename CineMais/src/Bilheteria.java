@@ -1,27 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Cinema;
+import dao.CinemaDao;
+import dao.DataBase;
+
 // Essa classe é o Facade
 public class Bilheteria {
     private static Bilheteria instance = new Bilheteria();
-    private DataBase db;
     private String shoppingSelecionado;
+    private CinemaDao cinemaDao = new CinemaDao();
 
     public Bilheteria(){
-        this.db = new DataBase();
+        
     }
 
     public static Bilheteria getInstance(){
         return instance;
     }
 
-    public void listaDbInterface(){
-        for (int i = 0; i < this.db.getCinemas().size(); i++) {
-            System.out.println("(" + i + ") " + this.db.getCinemas().get(i).getShopping());
+    public void getCinemas(){
+        List<Cinema> cinemas = new ArrayList<>();
+        cinemas = cinemaDao.select();
+        for (int i = 0; i < cinemas.size(); i++) {
+            System.out.print(cinemas.get(i).getNome());
+            //this.cinemas.add(new Cinema("CineMais", shoppings.get(i).toString()));
         }
-
-        System.out.println(this.db.getEmail() + this.db.getSenha());
-    }
-
-    public DataBase getDb(){
-        return this.db;
     }
 
     public String getShoppingSelecionado(){

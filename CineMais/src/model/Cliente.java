@@ -1,14 +1,25 @@
+package model;
+
 public class Cliente {
+    private int cpf;
     private String nome;
     private boolean estudante;
     private int idade;
     private Ingresso ingresso;
 
-    public Cliente(String nome, boolean estudante, int idade, Ingresso ingresso) {
+    public Cliente(int cpf,String nome, boolean estudante, int idade) {
+        this.cpf = cpf;
         this.nome = nome;
         this.estudante = estudante;
         this.idade = idade;
-        this.ingresso = ingresso;
+    }
+
+    public int getCpf(){
+        return cpf;
+    }
+
+    public void setCpf(int novoCpf){
+        this.cpf = novoCpf;
     }
 
     public String getNome() {
@@ -35,12 +46,6 @@ public class Cliente {
         this.idade = idade;
     }
 
-    public Ingresso getIngresso() {
-        return ingresso;
-    }
-
-    public void setIngresso(Ingresso ingresso) {
-        this.ingresso = ingresso;
-    }
+    
 
 }

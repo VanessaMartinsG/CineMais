@@ -1,3 +1,7 @@
+package model;
+
+import model.Cliente;
+
 public class Ingresso {
 
     private Cliente cliente;

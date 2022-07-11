@@ -1,19 +1,18 @@
+package model;
+
 public class Sala {
 
     private Cinema cinema;
     private int numero;
+    private int idSala;
     private int capacidade;
     private boolean sala3d;
     private String descricao;
     private Sessao sessoes[] = new Sessao[20];
     private static int i = 0;
 
-    public Sala(Cinema cinema, int numero, int capacidade, boolean sala3d, String descricao) {
-        this.cinema = cinema;
-        this.numero = numero;
-        this.capacidade = capacidade;
-        this.sala3d = sala3d;
-        this.descricao = descricao;
+    public Sala() {
+        
     }
 
     public Sessao[] getSessoes() {
@@ -23,6 +22,14 @@ public class Sala {
     public void setSessoes(Sessao sessoes) {
         this.sessoes[i] = sessoes;
         i++;
+    }
+
+    public int getIdSala(){
+        return this.idSala;
+    }
+
+    public void setIdSala(int id){
+        this.idSala = id;
     }
 
     public Cinema getCinema() {
