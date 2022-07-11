@@ -35,18 +35,16 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadastroController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contaController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #181818;" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="239.0" layoutY="22.0" text="Cadastro" textFill="RED">
+            <Label layoutX="269.0" layoutY="27.0" text="Conta" textFill="RED">
                <font>
                   <Font name="Comic Sans MS Bold" size="38.0" />
                </font>
@@ -56,32 +54,27 @@
                   <Font name="Comic Sans MS" size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="inputIdade" layoutX="109.0" layoutY="159.0" prefHeight="37.0" prefWidth="222.0" style="-fx-background-color: #202020;" text="Idade">
+            <TextField fx:id="inputIdade" layoutX="109.0" layoutY="169.0" prefHeight="37.0" prefWidth="222.0" style="-fx-background-color: #202020;" text="Idade">
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
                </font>
             </TextField>
-            <Label layoutX="418.0" layoutY="157.0" prefHeight="20.0" prefWidth="70.0" text="Estudante:" textFill="#666666">
+            <Label layoutX="419.0" layoutY="149.0" prefHeight="20.0" prefWidth="70.0" text="Estudante:" textFill="#666666">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <RadioButton fx:id="radioSim" layoutX="397.0" layoutY="186.0" mnemonicParsing="false" text="Sim" textFill="#666666">
-               <toggleGroup>
-                  <ToggleGroup fx:id="estudante" />
-               </toggleGroup></RadioButton>
-            <RadioButton fx:id="radioNao" layoutX="465.0" layoutY="186.0" mnemonicParsing="false" selected="true" text="Não" textFill="#666666" toggleGroup="$estudante" />
-            <TextField fx:id="inputEmail" layoutX="109.0" layoutY="222.0" prefHeight="32.0" prefWidth="431.0" style="-fx-background-color: #202020;" text="Email">
+            <TextField fx:id="inputEmail" layoutX="109.0" layoutY="235.0" prefHeight="32.0" prefWidth="431.0" style="-fx-background-color: #202020;" text="Email">
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="inputSenha" layoutX="109.0" layoutY="281.0" prefHeight="32.0" prefWidth="431.0" style="-fx-background-color: #202020;" text="Senha">
+            <TextField fx:id="inputSenha" layoutX="109.0" layoutY="288.0" prefHeight="32.0" prefWidth="431.0" style="-fx-background-color: #202020;" text="Senha">
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
                </font>
             </TextField>
-            <Button fx:id="btnCadastrar" layoutX="263.0" layoutY="349.0" mnemonicParsing="false" onAction="#fazerCadastro" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #202020; -fx-border-color: #990000; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Cadastrar" textFill="WHITE">
+            <Button fx:id="btnEditar" layoutX="263.0" layoutY="349.0" mnemonicParsing="false" onAction="#editarCadastro" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #202020; -fx-border-color: #990000; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Editar" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="18.0" />
                </font>
@@ -89,11 +82,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnBack" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#backToLogin" style="-fx-background-color: #181818;" text="&lt;&lt;" textFill="RED">
+            <Button fx:id="btnBack" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#voltarPerfil" style="-fx-background-color: #181818;" text="&lt;&lt;" textFill="RED">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
+            <TextField fx:id="inputEstudante" layoutX="405.0" layoutY="182.0" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #202020;" text="Sim/Não">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </TextField>
          </children>
     </AnchorPane>
   </children>

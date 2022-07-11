@@ -76,8 +76,15 @@ public class LoginController {
     }
 
     @FXML
-    void irParaCadastro(ActionEvent event) {
-        
+    void irParaCadastro(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
+
+        Parent root = FXMLLoader.load(getClass().getResource("cadastro.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

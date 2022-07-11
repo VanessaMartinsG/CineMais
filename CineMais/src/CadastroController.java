@@ -3,8 +3,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import model.Cliente;
 
 public class CadastroController {
+    Bilheteria bilheteria = Bilheteria.getInstance();
 
     @FXML
     private Button btnBack;
@@ -37,7 +39,11 @@ public class CadastroController {
 
     @FXML
     void fazerCadastro(ActionEvent event) {
-
+        Cliente cliente = new Cliente();
+        cliente.setNome(inputNome.getText());
+        cliente.setEmail(inputEmail.getText());
+        cliente.setIdade(Integer.parseInt(inputEmail.getText()));
+        cliente.setSenha(inputSenha.getText());
     }
 
 }

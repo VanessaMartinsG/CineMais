@@ -86,6 +86,21 @@ public class FilmesEmCartazController {
     }
 
     @FXML
+    void irDetalhes01(ActionEvent event) {
+
+    }
+
+    @FXML
+    void irDetalhes02(ActionEvent event) {
+
+    }
+
+    @FXML
+    void irDetalhes03(ActionEvent event) {
+
+    }
+
+    @FXML
     void voltarListaShoppings(ActionEvent event) throws IOException {
         Stage stage;
         Scene scene;
