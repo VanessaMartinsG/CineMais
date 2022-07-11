@@ -42,12 +42,15 @@ public class ClienteDao {
             // Passagem de parametros
             stmt = this.conn.prepareStatement(
                     "INSERT INTO " + this.Table
-                            + "(cpf,nome,estudante,idade) VALUES(?,?,?,?)",
+                            + "(nome,estudante,idade,email,senha) VALUES(?,?,?,?,?)",
                     PreparedStatement.RETURN_GENERATED_KEYS);
-            stmt.setInt(1, cliente.getCpf());
-            stmt.setString(2, cliente.getNome());
-            stmt.setBoolean(3, cliente.isEstudante());
-            stmt.setInt(4, cliente.getIdade());
+            stmt.setString(1, cliente.getNome());
+            stmt.setBoolean(2, cliente.isEstudante());
+            stmt.setInt(3, cliente.getIdade());
+            stmt.setString(4, cliente.getEmail());
+            stmt.setString(5, cliente.getSenha());
+            
+            
 
             // Execução da SQL
             stmt.executeUpdate();

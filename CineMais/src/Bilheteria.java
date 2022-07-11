@@ -2,10 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Cinema;
+import model.Cliente;
 import model.Sessao;
 import dao.CinemaDao;
 import dao.DataBase;
 import dao.SessaoDao;
+import dao.*; 
 
 // Essa classe é o Facade
 public class Bilheteria {
@@ -34,6 +36,10 @@ public class Bilheteria {
     public List<Sessao> getSessaoByDateAndShop(String data, int cinemaId){
         SessaoDao sessaoDao = new SessaoDao();
         return sessaoDao.select(data, cinemaId);
+    }
+    public void cadastrarCliente(Cliente cliente){
+        ClienteDao clienteDao = new ClienteDao();
+        clienteDao.insert(cliente);
     }
 
     public String getShoppingSelecionado(){

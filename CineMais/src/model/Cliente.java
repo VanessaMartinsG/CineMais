@@ -53,7 +53,7 @@ public class Cliente {
     }
 
     public String getSenha(){
-        return this.email;
+        return this.senha;
     }
 
     public void setSenha(String novaSenha){
