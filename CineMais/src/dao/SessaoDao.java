@@ -80,6 +80,7 @@ public class SessaoDao {
                 filme.setIdFilme(rs.getInt("filmeId"));
                 FilmeDao fDao = new FilmeDao();
                 sessao.setFilme(fDao.select(filme));
+                
 
                 Sala sala = new Sala();
                 sala.setIdSala(rs.getInt("salaId"));

@@ -35,7 +35,10 @@ public class Bilheteria {
 
     public List<Sessao> getSessaoByDateAndShop(String data, int cinemaId){
         SessaoDao sessaoDao = new SessaoDao();
-        return sessaoDao.select(data, cinemaId);
+        List<Sessao> sessoes=  sessaoDao.select(data, cinemaId);
+        for(Sessao sessao: sessoes)
+            System.out.println(sessao.getFilme().getNomeFilme()+ " " + cinemaId);
+        return sessoes;
     }
     public void cadastrarCliente(Cliente cliente){
         ClienteDao clienteDao = new ClienteDao();

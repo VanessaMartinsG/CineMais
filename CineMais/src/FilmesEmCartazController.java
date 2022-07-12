@@ -18,17 +18,17 @@ import model.Sessao;
 public class FilmesEmCartazController {
 
     @FXML
-    private Button btn01Filme1;
+    private Button btn01;
     @FXML
-    private Button btn02Filme1;
+    private Button btn02;
     @FXML
-    private Button btn03Filme2;
+    private Button btn03;
     @FXML
-    private Button btn04Filme2;
+    private Button btn04;
     @FXML
-    private Button btn05Filme3;
+    private Button btn05;
     @FXML
-    private Button btn06Filme3;
+    private Button btn06;
     @FXML
     private Button btnBack;
     @FXML
@@ -134,12 +134,12 @@ public class FilmesEmCartazController {
                 filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
                 filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
                 filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
-                btn01Filme1.setText(sessoes.get(0).getHorario());
-                btn02Filme1.setText(sessoes.get(1).getHorario());
-                btn03Filme2.setText(sessoes.get(2).getHorario());
-                btn04Filme2.setText(sessoes.get(3).getHorario());
-                btn05Filme3.setText(sessoes.get(4).getHorario());
-                btn06Filme3.setText(sessoes.get(5).getHorario());
+                btn01.setText(sessoes.get(0).getHorario());
+                btn02.setText(sessoes.get(1).getHorario());
+                btn03.setText(sessoes.get(2).getHorario());
+                btn04.setText(sessoes.get(3).getHorario());
+                btn05.setText(sessoes.get(4).getHorario());
+                btn06.setText(sessoes.get(5).getHorario());
                 setDataTipoSala(sessoes);
 
                 break;
@@ -148,6 +148,8 @@ public class FilmesEmCartazController {
                 filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
                 filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
                 filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+                for(Sessao sessao: sessoes)
+                    System.out.println(sessao.getFilme().getNomeFilme());
                 break;
             case "Shopping Paralela":
                 sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08", 3);
@@ -196,9 +198,16 @@ public class FilmesEmCartazController {
             infoSalaTipo06.setText("Sala:" + sessoes.get(5).getSala().getNumero() + "  " + "2D");
     }
 
-    // @FXML
-    // void procurarPorData(ActionEvent event) {
+    @FXML
+    void procurarPorData(ActionEvent event)  throws IOException {
+         Stage stage;
+        Scene scene;
 
-    // }
+        Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }
