@@ -69,6 +69,7 @@ public class FilmesEmCartazController {
     @FXML
     void irIngresso01(ActionEvent event) throws IOException {
 
+
     }
 
     @FXML
@@ -125,45 +126,83 @@ public class FilmesEmCartazController {
 
     @FXML
     void initialize() {
-        List<Sessao> sessoes = new ArrayList<>();
+        
         titleShopping.setText(bilheteria.getShoppingSelecionado());
-
-        switch (bilheteria.getShoppingSelecionado()) {
+        int shoppingId = -1;
+        switch (bilheteria.getShoppingSelecionado()){
             case "Shopping Salvador":
-                sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08", 1);
-                filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
-                filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
-                filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
-                btn01.setText(sessoes.get(0).getHorario());
-                btn02.setText(sessoes.get(1).getHorario());
-                btn03.setText(sessoes.get(2).getHorario());
-                btn04.setText(sessoes.get(3).getHorario());
-                btn05.setText(sessoes.get(4).getHorario());
-                btn06.setText(sessoes.get(5).getHorario());
-                setDataTipoSala(sessoes);
-
+                shoppingId = 1;
                 break;
             case "Shopping Barra":
-                sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08", 2);
-                filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
-                filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
-                filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
-                for(Sessao sessao: sessoes)
-                    System.out.println(sessao.getFilme().getNomeFilme());
+                shoppingId = 2;
                 break;
             case "Shopping Paralela":
-                sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08", 3);
-                filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
-                filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
-                filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+                shoppingId = 3;
                 break;
             case "Shopping da Bahia":
-                sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08", 4);
-                filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
-                filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
-                filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+                shoppingId = 4;
                 break;
         }
+
+        final List<Sessao> sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08", shoppingId);
+        filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
+        filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
+        filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
+        btn01.setText(sessoes.get(0).getHorario());
+        btn01.setOnAction(e -> {
+            try {
+                sessaoSelecionada(sessoes.get(0), e);
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
+        btn02.setText(sessoes.get(1).getHorario());
+        btn02.setOnAction(e -> {
+            try {
+                sessaoSelecionada(sessoes.get(1), e);
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
+        btn03.setText(sessoes.get(2).getHorario());
+        btn03.setOnAction(e -> {
+            try {
+                sessaoSelecionada(sessoes.get(2), e);
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
+        btn04.setText(sessoes.get(3).getHorario());
+        btn04.setOnAction(e -> {
+            try {
+                sessaoSelecionada(sessoes.get(3), e);
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
+        btn05.setText(sessoes.get(4).getHorario());
+        btn05.setOnAction(e -> {
+            try {
+                sessaoSelecionada(sessoes.get(4), e);
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
+        btn06.setText(sessoes.get(5).getHorario());
+        btn06.setOnAction(e -> {
+            try {
+                sessaoSelecionada(sessoes.get(5), e);
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
+        setDataTipoSala(sessoes);
     }
 
     public void setDataTipoSala(List<Sessao> sessoes) {
@@ -209,5 +248,20 @@ public class FilmesEmCartazController {
         stage.setScene(scene);
         stage.show();
     }
+
+    void sessaoSelecionada(Sessao sessao, ActionEvent event) throws IOException{
+        bilheteria.setSessaoselecionada(sessao);
+        System.out.println(sessao.getFilme().getNomeFilme() + "sessão selecionada");
+
+        Stage stage;
+        Scene scene;
+
+        Parent root = FXMLLoader.load(getClass().getResource("comprarIngresso.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
+    } 
+
 
 }

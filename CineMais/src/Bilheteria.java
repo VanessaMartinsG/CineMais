@@ -4,6 +4,7 @@ import java.util.List;
 import model.Cinema;
 import model.Cliente;
 import model.Sessao;
+import model.Sala;
 import dao.CinemaDao;
 import dao.DataBase;
 import dao.SessaoDao;
@@ -14,7 +15,34 @@ public class Bilheteria {
     private static Bilheteria instance = new Bilheteria();
     private String shoppingSelecionado;
     private CinemaDao cinemaDao = new CinemaDao();
+    private Sessao sessaoselecionada;
+    private Cliente clienteSelecionado;
+    private Sala salaSelecionada;
     // private SessaoDao sessaoDao = new SessaoDao();
+
+    public Sala getSalaSelecionada() {
+        return salaSelecionada;
+    }
+
+    public void setSalaSelecionada(Sala salaSelecionada) {
+        this.salaSelecionada = salaSelecionada;
+    }
+
+    public Cliente getClienteSelecionado() {
+        return clienteSelecionado;
+    }
+
+    public void setClienteSelecionado(Cliente clienteSelecionado) {
+        this.clienteSelecionado = clienteSelecionado;
+    }
+
+    public Sessao getSessaoselecionada() {
+        return sessaoselecionada;
+    }
+
+    public void setSessaoselecionada(Sessao sessaoselecionada) {
+        this.sessaoselecionada = sessaoselecionada;
+    }
 
     public Bilheteria(){
         

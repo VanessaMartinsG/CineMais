@@ -63,4 +63,34 @@ public class ClienteDao {
         }
         return true;
     }
+
+    public Cliente select(Cliente cliente) {
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+
+        try {
+            stmt = this.conn.prepareStatement("SELECT * FROM " + this.Table + " WHERE email like ?");
+            stmt.setString(1, cliente.getEmail());
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+        
+
+                cliente.setNome(rs.getString("nome"));
+                cliente.setIdade(rs.getInt("idade"));
+                cliente.setEstudante(rs.getBoolean("estudante"));
+
+            }
+
+            this.conn.close();
+            stmt.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return cliente;
+    }
 }
