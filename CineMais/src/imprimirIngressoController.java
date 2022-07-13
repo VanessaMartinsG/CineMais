@@ -55,7 +55,10 @@ public class imprimirIngressoController {
     private Label textNome;
 
     @FXML
-    private Label textQtd;
+    private Label textQtdComum;
+
+    @FXML
+    private Label textQtdEstudante;
 
     @FXML
     private Label textSala;
@@ -92,26 +95,24 @@ public class imprimirIngressoController {
     @FXML
     void initialize() {
         Sessao sessao = bilheteria.getSessaoselecionada();
-       textNome.setText(bilheteria.getClienteSelecionado().getNome());
-       textEmail.setText(bilheteria.getClienteSelecionado().getEmail());
-       textIdade.setText(Integer.toString(bilheteria.getClienteSelecionado().getIdade()));
-        if(bilheteria.getClienteSelecionado().isEstudante())
+        textNome.setText(bilheteria.getClienteSelecionado().getNome());
+        textEmail.setText(bilheteria.getClienteSelecionado().getEmail());
+        textIdade.setText(Integer.toString(bilheteria.getClienteSelecionado().getIdade()));
+        if (bilheteria.getClienteSelecionado().isEstudante())
             textEstudante.setText("É estudante");
         else
-            textEstudante.setText("Não é estudante"); 
-
+            textEstudante.setText("Não é estudante");
 
         textFilme.setText(sessao.getFilme().getNomeFilme());
         textSessao.setText(Integer.toString(sessao.getNumeroSessaoId()));
-          textDia.setText(sessao.getData());
-          textSala.setText(Integer.toString(sessao.getSala().getNumero()));
+        textDia.setText(sessao.getData());
+        textSala.setText(Integer.toString(sessao.getSala().getNumero()));
         textDuracao.setText(sessao.getFilme().getDuracao());
         textHorario.setText(sessao.getHorario());
-             if(sessao.getSala().isSala3d())
+        if (sessao.getSala().isSala3d())
             textTipo.setText("3D");
-        else 
+        else
             textTipo.setText("2D");
     }
-
 
 }

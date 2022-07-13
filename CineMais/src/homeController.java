@@ -21,6 +21,14 @@ public class homeController {
     private Button btnFilmesCartaz;
 
     @FXML
+    private Button btnPerfil;
+
+    @FXML
+    void menuPerfil(ActionEvent event) {
+
+    }
+
+    @FXML
     void GoToLogin(ActionEvent event) throws IOException {
         Stage stage;
         Scene scene;

@@ -25,15 +25,12 @@ public class ComprarIngressoController {
     @FXML
     private Label lblFromController1;
     Bilheteria bilheteria = Bilheteria.getInstance();
-    
+
     @FXML
     private Button btnBack;
 
     @FXML
     private Button btnContinuar;
-
-    @FXML
-    private TextField inputQtd;
 
     @FXML
     private Label textDuracao;
@@ -54,8 +51,17 @@ public class ComprarIngressoController {
     private Label titleShopping;
 
     @FXML
+    private Label textData;
+
+    @FXML
+    private TextField inputQtdComum;
+
+    @FXML
+    private TextField inputQtdEstudante;
+
+    @FXML
     void irFinalizacaoCompra(ActionEvent event) throws IOException {
-       Stage stage;
+        Stage stage;
         Scene scene;
 
         Parent root = FXMLLoader.load(getClass().getResource("finalizacaoCompra.fxml"));
@@ -63,8 +69,7 @@ public class ComprarIngressoController {
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
         stage.show();
-        
-       
+
     }
 
     @FXML
@@ -84,17 +89,15 @@ public class ComprarIngressoController {
         Sessao sessao = bilheteria.getSessaoselecionada();
         titleShopping.setText(bilheteria.getShoppingSelecionado());
 
-        if(sessao.getSala().isSala3d())
+        if (sessao.getSala().isSala3d())
             textTipo.setText("3D");
-        else 
+        else
             textTipo.setText("2D");
-        
+
         textFilme.setText(sessao.getFilme().getNomeFilme());
         textSessao.setText(Integer.toString(sessao.getNumeroSessaoId()));
         textDuracao.setText(sessao.getFilme().getDuracao());
         textPreco.setText(Float.toString(bilheteria.getSessaoselecionada().getFilme().getPreco()));
     }
-
-
 
 }

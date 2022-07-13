@@ -33,6 +33,9 @@ public class ListaShoppingsControllers {
     @FXML
     private Button btnSalvador;
 
+    @FXML
+    private Button btnPerfil;
+
     Bilheteria bilheteria = Bilheteria.getInstance();
 
     @FXML
@@ -41,7 +44,7 @@ public class ListaShoppingsControllers {
         Scene scene;
         bilheteria.setShoppingSelecionado("Shopping da Bahia");
         Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
-        
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
@@ -54,7 +57,7 @@ public class ListaShoppingsControllers {
         Scene scene;
         bilheteria.setShoppingSelecionado("Shopping Barra");
         Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
-        
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
@@ -67,7 +70,7 @@ public class ListaShoppingsControllers {
         Scene scene;
         bilheteria.setShoppingSelecionado("Shopping Paralela");
         Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
-        
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
@@ -76,12 +79,12 @@ public class ListaShoppingsControllers {
 
     @FXML
     void abrirShoppingSalvador(ActionEvent event) throws IOException {
-     
+
         Stage stage;
         Scene scene;
         bilheteria.setShoppingSelecionado("Shopping Salvador");
         Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
-        
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
@@ -98,6 +101,11 @@ public class ListaShoppingsControllers {
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    void menuPerfil(ActionEvent event) {
+
     }
 
 }

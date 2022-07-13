@@ -64,6 +64,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="btnPerfil" layoutX="579.0" layoutY="14.0" mnemonicParsing="false" onAction="#menuPerfil" prefHeight="22.0" prefWidth="31.0" style="-fx-background-color: #181818;" text="#" textFill="#ff1313">
+               <font>
+                  <Font name="Constantia Bold" size="25.0" />
+               </font>
+            </Button>
          </children>
     </AnchorPane>
   </children>
