@@ -3,18 +3,18 @@ insert into cinema (id,nomeCinema,nomeShopping) values (2,"CineMais","Shopping B
 insert into cinema (id,nomeCinema,nomeShopping) values (3,"CineMais","Shopping Paralela");
 insert into cinema (id,nomeCinema,nomeShopping) values (4,"CineMais","Shopping da Bahia");
 
-insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria) 
-values (1,"Vingadores Ultimato","Stan lee","Aron Man","3h10m",16,"Ação");
-insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria) 
-values (2,"Piratas do Caribe","Ronaldo","Johnny Depp","2h10m",16,"Ação");
-insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria) 
-values (3,"Velozes e Furiosos","Arnaldo","Braya","2h50m",14,"Ação");
-insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria) 
-values (4,"Star Wars","George","Hayden","2h30m",14,"Ação");
-insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria) 
-values (5,"Lalaland","Junin","Emma Stone","2h",14,"Musical");
-insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria) 
-values (6,"Sonic","Cleiton","Jim Carry","2h20m",12,"Infantil");
+insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria,preco) 
+values (1,"Vingadores Ultimato","Stan lee","Aron Man","3h10m",16,"Ação",25.50);
+insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria,preco) 
+values (2,"Piratas do Caribe","Ronaldo","Johnny Depp","2h10m",16,"Ação",25.50);
+insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria,preco) 
+values (3,"Velozes e Furiosos","Arnaldo","Braya","2h50m",14,"Ação",25.50);
+insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria,preco) 
+values (4,"Star Wars","George","Hayden","2h30m",14,"Ação",25.50);
+insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria,preco) 
+values (5,"Lalaland","Junin","Emma Stone","2h",14,"Musical",25.50);
+insert into filme (idfilme,titulo,diretor,atorPrincipal,duracao,faixaEtaria,Categoria,preco) 
+values (6,"Sonic","Cleiton","Jim Carry","2h20m",12,"Infantil",25.50);
 
 insert into sala (numero,capacidade,sala3d,descricao,cinemaId,salaId) 
 values (1,50,false,"Sala 2d padrao",1,1);
