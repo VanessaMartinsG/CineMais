@@ -8,6 +8,7 @@ public class Filme {
     private String duracao;
     private int faixaEtaria;
     private String categoria;
+    private Float preco;
 
     public Filme() {
         
@@ -67,6 +68,14 @@ public class Filme {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+     public float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
     }
 
 }

@@ -76,7 +76,7 @@ public class ListaShoppingsControllers {
 
     @FXML
     void abrirShoppingSalvador(ActionEvent event) throws IOException {
-        System.out.println(bilheteria.getClienteSelecionado().getNome());
+     
         Stage stage;
         Scene scene;
         bilheteria.setShoppingSelecionado("Shopping Salvador");

@@ -8,6 +8,7 @@ public class Sessao {
     private Sala sala;
     private String data;
     private int cinemaId;
+    private String preco;
 
     public Sessao() {
     
@@ -52,6 +53,7 @@ public class Sessao {
     public void setData(String novaData){
         this.data = novaData;
     }
+  
 
     public int getCinemaId(){
         return this.cinemaId;

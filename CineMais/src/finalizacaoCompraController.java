@@ -13,6 +13,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import model.Sessao;
+import model.Ingresso;
 public class finalizacaoCompraController {
     @FXML
     private Label lblFromController1;
@@ -71,10 +72,19 @@ public class finalizacaoCompraController {
      
     @FXML
     void irCompraRealizada(ActionEvent event) throws IOException {
+
+          Ingresso ingresso = new Ingresso();
+        ingresso.setCliente(bilheteria.getClienteSelecionado());
+        ingresso.setPreco(bilheteria.getSessaoselecionada().getFilme().getPreco());
+        ingresso.setSessao(bilheteria.getSessaoselecionada());
+        ingresso.setDuracao(textDuracao.getText());
+        ingresso.setPreco(bilheteria.getSessaoselecionada().getFilme().getPreco());
+        bilheteria.cadastrarIngresso(ingresso);
+
         Stage stage;
         Scene scene;
 
-        Parent root = FXMLLoader.load(getClass().getResource("comprarIngresso.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("compraRealizada.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
@@ -99,6 +109,7 @@ public class finalizacaoCompraController {
           textSala.setText(Integer.toString(sessao.getSala().getNumero()));
         textDuracao.setText(sessao.getFilme().getDuracao());
         textHorario.setText(sessao.getHorario());
+        
              if(sessao.getSala().isSala3d())
             textTipo.setText("3D");
         else 

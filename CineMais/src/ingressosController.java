@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+
 public class ingressosController {
 
     @FXML
@@ -34,7 +35,7 @@ public class ingressosController {
 
     @FXML
     void abrirTicket01(ActionEvent event) {
-
+        
     }
 
     @FXML

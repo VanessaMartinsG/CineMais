@@ -92,6 +92,7 @@ public class ComprarIngressoController {
         textFilme.setText(sessao.getFilme().getNomeFilme());
         textSessao.setText(Integer.toString(sessao.getNumeroSessaoId()));
         textDuracao.setText(sessao.getFilme().getDuracao());
+        textPreco.setText(Float.toString(bilheteria.getSessaoselecionada().getFilme().getPreco()));
     }
 
 

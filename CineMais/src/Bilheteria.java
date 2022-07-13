@@ -5,6 +5,7 @@ import model.Cinema;
 import model.Cliente;
 import model.Sessao;
 import model.Sala;
+import model.Ingresso;
 import dao.CinemaDao;
 import dao.DataBase;
 import dao.SessaoDao;
@@ -71,6 +72,11 @@ public class Bilheteria {
     public void cadastrarCliente(Cliente cliente){
         ClienteDao clienteDao = new ClienteDao();
         clienteDao.insert(cliente);
+    }
+
+    public void cadastrarIngresso(Ingresso ingresso){
+        IngressoDao ingressoDao = new IngressoDao();
+        ingressoDao.insert(ingresso);
     }
 
     public String getShoppingSelecionado(){

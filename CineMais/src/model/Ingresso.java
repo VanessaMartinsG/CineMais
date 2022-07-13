@@ -1,6 +1,6 @@
 package model;
 
-import model.Cliente;
+import model.Ingresso;
 
 public class Ingresso {
 
@@ -10,6 +10,8 @@ public class Ingresso {
     private Data horario;
     private String duracao;
     private String status;
+     public Ingresso() {
+    }
 
     public Ingresso(Cliente cliente, float preco, Sessao sessao, Data horario, String duracao, String status) {
         this.cliente = cliente;
@@ -18,6 +20,7 @@ public class Ingresso {
         this.horario = horario;
         this.duracao = duracao;
         this.status = status;
+        this.preco = preco;
     }
 
     public Cliente getCliente() {
@@ -67,5 +70,7 @@ public class Ingresso {
     public void setStatus(String status) {
         this.status = status;
     }
+     
+   
 
 }
