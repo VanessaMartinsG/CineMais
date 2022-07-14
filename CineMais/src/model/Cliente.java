@@ -9,6 +9,14 @@ public class Cliente {
     private String senha;
     private Ingresso ingresso;
 
+    public Ingresso getIngresso() {
+        return ingresso;
+    }
+
+    public void setIngresso(Ingresso ingresso) {
+        this.ingresso = ingresso;
+    }
+
     public Cliente() {
     }
 

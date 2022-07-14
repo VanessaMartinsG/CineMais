@@ -39,9 +39,7 @@ public class CompraRealizadaController {
              stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
              scene = new Scene(root, 640, 400);
              stage.setScene(scene);
-             stage.show();
-             
-            
+             stage.show();      
          
     }
 

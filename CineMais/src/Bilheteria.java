@@ -20,6 +20,15 @@ public class Bilheteria {
     private Cliente clienteSelecionado;
     private Sala salaSelecionada;
     // private SessaoDao sessaoDao = new SessaoDao();
+    private String fds = "2022-07-09";
+
+    public String getFds() {
+        return fds;
+    }
+
+    public void setFds(String fds) {
+        this.fds = fds;
+    }
 
     public Sala getSalaSelecionada() {
         return salaSelecionada;
@@ -85,4 +94,6 @@ public class Bilheteria {
     public void setShoppingSelecionado(String nome){
         this.shoppingSelecionado = nome;
     }
+
+    
 }

@@ -10,6 +10,14 @@ public class Sessao {
     private int cinemaId;
     private String preco;
 
+    public String getPreco() {
+        return preco;
+    }
+
+    public void setPreco(String preco) {
+        this.preco = preco;
+    }
+
     public Sessao() {
     
     }

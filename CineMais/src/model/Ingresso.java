@@ -1,76 +1,56 @@
 package model;
 
-import model.Ingresso;
 
 public class Ingresso {
 
-    private Cliente cliente;
-    private float preco;
-    private Sessao sessao;
-    private Data horario;
-    private String duracao;
+    
+    private int idingresso;
+    private String clienteEmail;
+    private double preco;
     private String status;
-     public Ingresso() {
-    }
+    private int idSessao;
+    private Cliente cliente;
 
-    public Ingresso(Cliente cliente, float preco, Sessao sessao, Data horario, String duracao, String status) {
-        this.cliente = cliente;
-        this.preco = preco;
-        this.sessao = sessao;
-        this.horario = horario;
-        this.duracao = duracao;
-        this.status = status;
-        this.preco = preco;
-    }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
 
-    public float getPreco() {
+    public int getIdingresso() {
+        return idingresso;
+    }
+    public void setIdingresso(int idingresso) {
+        this.idingresso = idingresso;
+    }
+    public String getClienteEmail() {
+        return clienteEmail;
+    }
+    public void setClienteEmail(String clienteEmail) {
+        this.clienteEmail = clienteEmail;
+    }
+    public double getPreco() {
         return preco;
     }
-
-    public void setPreco(float preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
-
-    public Sessao getSessao() {
-        return sessao;
-    }
-
-    public void setSessao(Sessao sessao) {
-        this.sessao = sessao;
-    }
-
-    public Data getHorario() {
-        return horario;
-    }
-
-    public void setHorario(Data horario) {
-        this.horario = horario;
-    }
-
-    public String getDuracao() {
-        return duracao;
-    }
-
-    public void setDuracao(String duracao) {
-        this.duracao = duracao;
-    }
-
     public String getStatus() {
         return status;
     }
-
     public void setStatus(String status) {
         this.status = status;
     }
-     
-   
+    public int getIdSessao() {
+        return idSessao;
+    }
+    public void setIdSessao(int idSessao) {
+        this.idSessao = idSessao;
+    }
+
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+
+    public Cliente getCliente() {
+        return this.cliente;
+    }
 
 }

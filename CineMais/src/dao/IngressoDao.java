@@ -22,12 +22,14 @@ public class IngressoDao {
             // Passagem de parametros
             stmt = this.conn.prepareStatement(
                     "INSERT INTO " + this.Table 
-                            + "(clienteCpf,preco,status,idSessao) VALUES(?,?,?,?)",
+                            + "(clienteEmail, preco, status, idSessao) VALUES(?,?,?,?)",
                     PreparedStatement.RETURN_GENERATED_KEYS);
-            stmt.setInt(1, ingresso.getCliente().getCpf());
-             stmt.setFloat(2, ingresso.getSessao().getFilme().getPreco()); 
-              stmt.setString(3, ingresso.getStatus()); 
-               stmt.setInt(4, ingresso.getSessao().getNumeroSessaoId());   
+            
+            stmt.setString(1, ingresso.getClienteEmail());
+            stmt.setDouble(2, ingresso.getPreco());
+            stmt.setString(3, ingresso.getStatus());
+            stmt.setInt(4, ingresso.getIdSessao());
+               
 
             // Execução da SQL
             stmt.executeUpdate();

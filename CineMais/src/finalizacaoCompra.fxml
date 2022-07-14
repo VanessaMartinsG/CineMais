@@ -101,7 +101,35 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="363.0" layoutY="124.0" prefHeight="234.0" prefWidth="254.0" style="-fx-background-color: #202020; -fx-background-radius: 20PX;">
+            <Label layoutX="91.0" layoutY="102.0" text="Detalhes do Cliente" textFill="#999999">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="373.0" layoutY="102.0" text="Detalhes do Pedido" textFill="#999999">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="263.0" text="Total:" textFill="#bc0202">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="textTotal" layoutX="163.0" layoutY="263.0" prefHeight="28.0" prefWidth="78.0" text="50,00" textFill="#bc0202">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnComprar" layoutX="129.0" layoutY="320.0" mnemonicParsing="false" onAction="#irCompraRealizada" prefHeight="33.0" prefWidth="127.0" style="-fx-background-color: #2d0202ff; -fx-border-color: #434343; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="COMPRAR" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Pane layoutX="366.0" layoutY="124.0" prefHeight="266.0" prefWidth="254.0" style="-fx-background-color: #202020; -fx-background-radius: 20PX;">
                <children>
                   <VBox layoutX="14.0" layoutY="14.0" prefHeight="203.0" prefWidth="66.0" spacing="4.0">
                      <children>
@@ -130,24 +158,24 @@
                               <Font name="Comic Sans MS Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="28.0" prefWidth="45.0" text="Sala:" textFill="#999999">
+                        <Label prefHeight="24.0" prefWidth="45.0" text="Sala:" textFill="#999999">
                            <font>
                               <Font name="Comic Sans MS Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="35.0" prefWidth="45.0" text="Valor:" textFill="#999999">
+                        <Label prefHeight="25.0" prefWidth="45.0" text="Valor:" textFill="#999999">
                            <font>
                               <Font name="Comic Sans MS Bold" size="15.0" />
                            </font>
                         </Label>
                      </children>
                   </VBox>
-                  <Label layoutX="150.0" layoutY="187.0" text="Qtd.:" textFill="#999999">
+                  <Label layoutX="109.0" layoutY="200.0" text="Qtd." textFill="#999999">
                      <font>
                         <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="150.0" layoutY="151.0" text="Tipo:" textFill="#999999">
+                  <Label layoutX="150.0" layoutY="147.0" text="Tipo:" textFill="#999999">
                      <font>
                         <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
@@ -181,56 +209,43 @@
                         </Label>
                      </children>
                   </VBox>
-                  <Label fx:id="textSala" layoutX="77.0" layoutY="151.0" prefHeight="25.0" prefWidth="44.0" text="03" textFill="#999999">
+                  <Label fx:id="textSala" layoutX="68.0" layoutY="147.0" prefHeight="16.0" prefWidth="44.0" text="03" textFill="#999999">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="textValor" layoutX="77.0" layoutY="187.0" prefHeight="25.0" prefWidth="44.0" text="25,50" textFill="#999999">
+                  <Label fx:id="textValor" layoutX="68.0" layoutY="177.0" prefHeight="25.0" prefWidth="44.0" text="25,50" textFill="#999999">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="textTipo" layoutX="209.0" layoutY="150.0" prefHeight="25.0" prefWidth="44.0" text="3D" textFill="#999999">
+                  <Label fx:id="textTipo" layoutX="199.0" layoutY="147.0" prefHeight="25.0" prefWidth="44.0" text="3D" textFill="#999999">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="textQtd" layoutX="209.0" layoutY="186.0" prefHeight="25.0" prefWidth="44.0" text="2" textFill="#999999">
+                  <Label fx:id="textQtdComum" layoutX="84.0" layoutY="230.0" prefHeight="25.0" prefWidth="44.0" text="2" textFill="#999999">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="230.0" text="Comum:" textFill="#999999">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="126.0" layoutY="230.0" text="Estudante:" textFill="#999999">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="textQtdEstudante" layoutX="210.0" layoutY="229.0" prefHeight="25.0" prefWidth="44.0" text="2" textFill="#999999">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Label layoutX="91.0" layoutY="102.0" text="Detalhes do Cliente" textFill="#999999">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="373.0" layoutY="102.0" text="Detalhes do Pedido" textFill="#999999">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="91.0" layoutY="263.0" text="Total:" textFill="#bc0202">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label fx:id="textTotal" layoutX="163.0" layoutY="263.0" prefHeight="28.0" prefWidth="78.0" text="50,00" textFill="#bc0202">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="20.0" />
-               </font>
-            </Label>
-            <Button fx:id="btnComprar" layoutX="129.0" layoutY="320.0" mnemonicParsing="false" onAction="#irCompraRealizada" prefHeight="33.0" prefWidth="127.0" style="-fx-background-color: #2d0202ff; -fx-border-color: #434343; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="COMPRAR" textFill="WHITE">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
          </children>
     </AnchorPane>
   </children>

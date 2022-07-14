@@ -263,5 +263,21 @@ public class FilmesEmCartazController {
         stage.show();
     } 
 
+    @FXML
+    void menuPerfil(ActionEvent event) throws IOException {
+
+        
+        Stage stage;
+        Scene scene;
+
+        Parent root = FXMLLoader.load(getClass().getResource("perfil.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
+             
+             
+    }
+
 
 }

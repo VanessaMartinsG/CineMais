@@ -87,7 +87,7 @@ public class perfilController {
     @FXML
     void voltarHome(ActionEvent event) throws IOException{
 
-        Stage stage;
+             Stage stage;
              Scene scene;
      
              Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
@@ -97,5 +97,8 @@ public class perfilController {
              stage.show();
              
     }
+
+    
+   
 
 }

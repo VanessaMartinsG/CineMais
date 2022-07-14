@@ -52,87 +52,48 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label layoutX="197.0" layoutY="27.0" text="COMPRAR INGRESSO" textFill="RED">
+            <Label layoutX="197.0" layoutY="20.0" text="COMPRAR INGRESSO" textFill="RED">
                <font>
                   <Font name="Comic Sans MS Bold" size="24.0" />
                </font>
             </Label>
-            <Pane layoutX="100.0" layoutY="82.0" prefHeight="72.0" prefWidth="476.0" style="-fx-background-color: #202020; -fx-background-radius: 10px;">
+            <Pane layoutX="103.0" layoutY="69.0" prefHeight="72.0" prefWidth="476.0" style="-fx-background-color: #202020; -fx-background-radius: 10px;">
                <children>
                   <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="32.0" layoutY="23.0">
                      <image>
                         <Image url="@../../../../../../../Pictures/rascunho/179386.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="79.0" layoutY="14.0" text="Estudantes têm direito a um desconto de 50% no ingresso." textFill="#666666" />
-                  <Label layoutX="79.0" layoutY="38.0" text="Nos finais de semana os ingressos aumentam 5%." textFill="#666666" />
+                  <Label layoutX="79.0" layoutY="6.0" text="Estudantes têm direito a um desconto de 50% no ingresso." textFill="#666666" />
+                  <Label layoutX="79.0" layoutY="28.0" text="Nos finais de semana os ingressos aumentam 10%." textFill="#666666" />
+                  <Label layoutX="79.0" layoutY="50.0" prefHeight="17.0" prefWidth="319.0" text="Para os ingressos do tipo 3D, os ingressos aumentam 20%." textFill="#666666" />
                </children>
             </Pane>
-            <Label fx:id="titleShopping" layoutX="247.0" layoutY="166.0" text="Shopping Salvador" textFill="WHITE">
+            <Label fx:id="titleShopping" layoutX="247.0" layoutY="149.0" text="Shopping Salvador" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="18.0" />
                </font>
             </Label>
-            <VBox layoutX="165.0" layoutY="204.0" prefHeight="129.0" prefWidth="82.0">
+            <VBox layoutX="143.0" layoutY="189.0" prefHeight="87.0" prefWidth="86.0">
                <children>
-                  <Label fx:id="filme" text="Filme:" textFill="#999999">
+                  <Label text="Filme:" textFill="#999999">
                      <font>
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="filme" prefHeight="29.0" prefWidth="68.0" text="Sessão:" textFill="#999999">
+                  <Label prefHeight="29.0" prefWidth="68.0" text="Sessão:" textFill="#999999">
                      <font>
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="filme" prefHeight="31.0" prefWidth="78.0" text="Duração:" textFill="#999999">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="filme" prefHeight="33.0" prefWidth="45.0" text="Tipo:" textFill="#999999">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="filme" prefHeight="32.0" prefWidth="55.0" text="Preço:" textFill="#999999">
+                  <Label prefHeight="31.0" prefWidth="78.0" text="Duração:" textFill="#999999">
                      <font>
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
-            <Label layoutX="338.0" layoutY="308.0" text="Qtd.:" textFill="#999999">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="textFilme" layoutX="259.0" layoutY="204.0" text="Vingadores: Ultimato" textFill="#999999">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Label fx:id="textSessao" layoutX="259.0" layoutY="230.0" text="05" textFill="#999999">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Label fx:id="textDuracao" layoutX="259.0" layoutY="256.0" text="03h10m" textFill="#999999">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Label fx:id="textTipo" layoutX="259.0" layoutY="282.0" text="3D" textFill="#999999">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Label fx:id="textPreco" layoutX="258.0" layoutY="308.0" text="25,50" textFill="#999999">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <TextField fx:id="inputQtd" layoutX="400.0" layoutY="308.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #202020;" />
+            <TextField fx:id="inputQtdComum" layoutX="217.0" layoutY="303.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #202020;" />
             <Button fx:id="btnContinuar" layoutX="268.0" layoutY="356.0" mnemonicParsing="false" onAction="#irFinalizacaoCompra" prefHeight="33.0" prefWidth="117.0" style="-fx-background-color: #202020; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-color: #cc0000;" text="Continuar" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="16.0" />
@@ -141,6 +102,79 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <VBox layoutX="229.0" layoutY="189.0" prefHeight="87.0" prefWidth="172.0">
+               <children>
+                  <Label fx:id="textFilme" prefHeight="27.0" prefWidth="177.0" text="Vingadores: Ultimato" textFill="#999999">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="textSessao" prefHeight="26.0" prefWidth="85.0" text="05" textFill="#999999">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="textDuracao" prefHeight="33.0" prefWidth="61.0" text="03h10m" textFill="#999999">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="411.0" layoutY="185.0" prefHeight="98.0" prefWidth="68.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="55.0" text="Data:" textFill="#999999">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="32.0" prefWidth="45.0" text="Tipo:" textFill="#999999">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="18.0" prefWidth="55.0" text="Preço:" textFill="#999999">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="475.0" layoutY="189.0" prefHeight="78.0" prefWidth="95.0">
+               <children>
+                  <Label fx:id="textData" prefHeight="34.0" prefWidth="85.0" text="05/05" textFill="#999999">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="textTipo" prefHeight="35.0" prefWidth="40.0" text="3D" textFill="#999999">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="textPreco" prefHeight="33.0" prefWidth="41.0" text="25,50" textFill="#999999">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label layoutX="143.0" layoutY="296.0" prefHeight="32.0" prefWidth="68.0" text="Comum:" textFill="#999999">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="310.0" layoutY="264.0" prefHeight="31.0" prefWidth="51.0" text="Qtd." textFill="#999999">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="354.0" layoutY="296.0" prefHeight="32.0" prefWidth="117.0" text="Estudante:" textFill="#999999">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputQtdEstudante" layoutX="454.0" layoutY="303.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #202020;" />
          </children>
     </AnchorPane>
   </children>
