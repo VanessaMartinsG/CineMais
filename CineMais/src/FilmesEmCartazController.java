@@ -65,6 +65,7 @@ public class FilmesEmCartazController {
     @FXML
     private Label lblFromController1;
     Bilheteria bilheteria = Bilheteria.getInstance();
+    private String dateFormated;
 
     @FXML
     void irIngresso01(ActionEvent event) throws IOException {
@@ -143,8 +144,9 @@ public class FilmesEmCartazController {
                 shoppingId = 4;
                 break;
         }
-
-        final List<Sessao> sessoes = bilheteria.getSessaoByDateAndShop("2022-07-08", shoppingId);
+        dateFormated = "2022-"+inputMes.getText()+"-"+inputDia.getText();
+        System.out.print(dateFormated);
+        final List<Sessao> sessoes = bilheteria.getSessaoByDateAndShop(dateFormated, shoppingId);
         filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
         filme2.setText(sessoes.get(2).getFilme().getNomeFilme());
         filme3.setText(sessoes.get(4).getFilme().getNomeFilme());
@@ -241,22 +243,25 @@ public class FilmesEmCartazController {
     void procurarPorData(ActionEvent event)  throws IOException {
          Stage stage;
         Scene scene;
-
-        Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 640, 400);
-        stage.setScene(scene);
-        stage.show();
+        initialize();
+        // Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        // stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // scene = new Scene(root, 640, 400);
+        // stage.setScene(scene);
+        // stage.show();
     }
 
     void sessaoSelecionada(Sessao sessao, ActionEvent event) throws IOException{
         bilheteria.setSessaoselecionada(sessao);
-        System.out.println(sessao.getFilme().getNomeFilme() + "sessão selecionada");
 
         Stage stage;
         Scene scene;
-
-        Parent root = FXMLLoader.load(getClass().getResource("comprarIngresso.fxml"));
+        Parent root;
+        if(bilheteria.getClienteSelecionado() != null){
+             root = FXMLLoader.load(getClass().getResource("comprarIngresso.fxml"));    
+        }else{
+             root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        }
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);

@@ -131,14 +131,14 @@
                   <Label fx:id="infoSalaTipo04" layoutX="368.0" layoutY="136.0" text="Sala 08  3D 10/07" textFill="WHITE" />
                   <Label fx:id="infoSalaTipo05" layoutX="233.0" layoutY="197.0" text="Sala 04  2D 11/07" textFill="WHITE" />
                   <Label fx:id="infoSalaTipo06" layoutX="368.0" layoutY="197.0" text="Sala 03  3D 12/07" textFill="WHITE" />
-                  <TextField fx:id="inputDia" layoutX="280.0" layoutY="2.0" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #303030;" text="DD" />
+                  <TextField fx:id="inputDia" layoutX="280.0" layoutY="2.0" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #FFFFFF;" text="08" />
                   <Label layoutX="323.0" layoutY="1.0" text="/" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputMes" layoutX="337.0" layoutY="3.0" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #303030;" text="MM" />
-                  <Button fx:id="btnBuscarData" layoutX="381.0" layoutY="3.0" mnemonicParsing="false" onAction="#procurarPorData" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #202020;" text="Bucar Data" textFill="#ff4e4e" underline="true">
+                  <TextField fx:id="inputMes" layoutX="337.0" layoutY="3.0" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #FFFFFF;" text="07" />
+                  <Button fx:id="btnBuscarData" layoutX="381.0" layoutY="3.0" mnemonicParsing="false" onAction="#procurarPorData" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #202020;" text="Buscar Data" textFill="#ff4e4e" underline="true">
                      <font>
                         <Font name="Comic Sans MS" size="14.0" />
                      </font>
