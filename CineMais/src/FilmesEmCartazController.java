@@ -63,13 +63,15 @@ public class FilmesEmCartazController {
     private TextField inputMes;
 
     @FXML
+    private Button btnPerfil;
+
+    @FXML
     private Label lblFromController1;
     Bilheteria bilheteria = Bilheteria.getInstance();
     private String dateFormated;
 
     @FXML
     void irIngresso01(ActionEvent event) throws IOException {
-
 
     }
 
@@ -127,10 +129,10 @@ public class FilmesEmCartazController {
 
     @FXML
     void initialize() {
-        
+
         titleShopping.setText(bilheteria.getShoppingSelecionado());
         int shoppingId = -1;
-        switch (bilheteria.getShoppingSelecionado()){
+        switch (bilheteria.getShoppingSelecionado()) {
             case "Shopping Salvador":
                 shoppingId = 1;
                 break;
@@ -144,7 +146,7 @@ public class FilmesEmCartazController {
                 shoppingId = 4;
                 break;
         }
-        dateFormated = "2022-"+inputMes.getText()+"-"+inputDia.getText();
+        dateFormated = "2022-" + inputMes.getText() + "-" + inputDia.getText();
         System.out.print(dateFormated);
         final List<Sessao> sessoes = bilheteria.getSessaoByDateAndShop(dateFormated, shoppingId);
         filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
@@ -240,8 +242,8 @@ public class FilmesEmCartazController {
     }
 
     @FXML
-    void procurarPorData(ActionEvent event)  throws IOException {
-         Stage stage;
+    void procurarPorData(ActionEvent event) throws IOException {
+        Stage stage;
         Scene scene;
         initialize();
         // Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
@@ -251,22 +253,37 @@ public class FilmesEmCartazController {
         // stage.show();
     }
 
-    void sessaoSelecionada(Sessao sessao, ActionEvent event) throws IOException{
+    void sessaoSelecionada(Sessao sessao, ActionEvent event) throws IOException {
         bilheteria.setSessaoselecionada(sessao);
 
         Stage stage;
         Scene scene;
         Parent root;
-        if(bilheteria.getClienteSelecionado() != null){
-             root = FXMLLoader.load(getClass().getResource("comprarIngresso.fxml"));    
-        }else{
-             root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        if (bilheteria.getClienteSelecionado() != null) {
+            root = FXMLLoader.load(getClass().getResource("comprarIngresso.fxml"));
+        } else {
+            root = FXMLLoader.load(getClass().getResource("login.fxml"));
         }
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
         stage.show();
-    } 
+    }
 
+    @FXML
+    void menuPerfil(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
+        Parent root;
+        if (bilheteria.getClienteSelecionado() != null) {
+            root = FXMLLoader.load(getClass().getResource("perfil.fxml"));
+        } else {
+            root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        }
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }

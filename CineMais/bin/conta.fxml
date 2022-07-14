@@ -35,40 +35,63 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homeController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contaController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #181818;" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="240.0" layoutY="92.0" opacity="0.9" text="CineMais" textFill="#da0000">
+            <Label layoutX="269.0" layoutY="27.0" text="Conta" textFill="RED">
                <font>
                   <Font name="Comic Sans MS Bold" size="38.0" />
                </font>
             </Label>
-            <Button fx:id="btnFilmesCartaz" layoutX="105.0" layoutY="245.0" mnemonicParsing="false" onAction="#ViewFilmesEmCartaz" prefHeight="46.0" prefWidth="177.0" style="-fx-background-color: #202020; -fx-background-radius: 10px; -fx-border-color: #ffffff; -fx-border-width: 0.05px; -fx-border-radius: 10px;" text="Filmes em cartaz" textFill="WHITE">
+            <TextField fx:id="inputNome" layoutX="109.0" layoutY="104.0" prefHeight="32.0" prefWidth="431.0" style="-fx-background-color: #202020;" text="Nome">
                <font>
-                  <Font name="Comic Sans MS Bold Italic" size="18.0" />
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="inputIdade" layoutX="109.0" layoutY="169.0" prefHeight="37.0" prefWidth="222.0" style="-fx-background-color: #202020;" text="Idade">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="419.0" layoutY="149.0" prefHeight="20.0" prefWidth="70.0" text="Estudante:" textFill="#666666">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputEmail" layoutX="109.0" layoutY="235.0" prefHeight="32.0" prefWidth="431.0" style="-fx-background-color: #202020;" text="Email">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="inputSenha" layoutX="109.0" layoutY="288.0" prefHeight="32.0" prefWidth="431.0" style="-fx-background-color: #202020;" text="Senha">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnEditar" layoutX="263.0" layoutY="349.0" mnemonicParsing="false" onAction="#editarCadastro" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #202020; -fx-border-color: #990000; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Editar" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnComprarIngresso" layoutX="353.0" layoutY="245.0" mnemonicParsing="false" onAction="#GoToLogin" prefHeight="46.0" prefWidth="177.0" style="-fx-background-color: #202020; -fx-background-radius: 10px; -fx-border-color: #ffffff; -fx-border-width: 0.05px; -fx-border-radius: 10px;" text="Comprar ingresso" textFill="WHITE">
+            <Button fx:id="btnBack" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#voltarPerfil" style="-fx-background-color: #181818;" text="&lt;&lt;" textFill="RED">
                <font>
-                  <Font name="Comic Sans MS Bold Italic" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="btnPerfil" layoutX="579.0" layoutY="14.0" mnemonicParsing="false" onAction="#menuPerfil" prefHeight="22.0" prefWidth="31.0" style="-fx-background-color: #181818;" text="#" textFill="#ff1313">
-               <font>
-                  <Font name="Constantia Bold" size="25.0" />
+                  <Font size="15.0" />
                </font>
             </Button>
+            <TextField fx:id="inputEstudante" layoutX="405.0" layoutY="182.0" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #202020;" text="Sim/Não">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </TextField>
          </children>
     </AnchorPane>
   </children>

@@ -32,8 +32,7 @@ public class ComprarIngressoController {
     @FXML
     private Button btnContinuar;
 
-    @FXML
-    private TextField inputQtd;
+
 
     @FXML
     private Label textDuracao;
@@ -52,6 +51,15 @@ public class ComprarIngressoController {
 
     @FXML
     private Label titleShopping;
+
+    @FXML
+    private Label textData;
+
+    @FXML
+    private TextField inputQtdComum;
+
+    @FXML
+    private TextField inputQtdEstudante;
 
     @FXML
     void irFinalizacaoCompra(ActionEvent event) throws IOException {

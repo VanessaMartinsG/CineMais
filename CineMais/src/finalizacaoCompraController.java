@@ -55,7 +55,10 @@ public class finalizacaoCompraController {
     private Label textTipo;
 
     @FXML
-    private Label textQtd;
+    private Label textQtdComum;
+
+    @FXML
+    private Label textQtdEstudante;
 
     @FXML
     void voltarListaShoppings(ActionEvent event) throws IOException {
