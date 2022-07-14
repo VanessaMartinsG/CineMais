@@ -12,8 +12,7 @@ public class ComprarIngressoController {
     @FXML
     private Button btnContinuar;
 
-    @FXML
-    private TextField inputQtd;
+
 
     @FXML
     private Label textDuracao;
@@ -34,7 +33,22 @@ public class ComprarIngressoController {
     private Label titleShopping;
 
     @FXML
+<<<<<<< Updated upstream
     void irFinalizacaoCompra(ActionEvent event) {
+=======
+    private Label textData;
+
+    @FXML
+    private TextField inputQtdComum;
+
+    @FXML
+    private TextField inputQtdEstudante;
+
+    @FXML
+    void irFinalizacaoCompra(ActionEvent event) throws IOException {
+       Stage stage;
+        Scene scene;
+>>>>>>> Stashed changes
 
     }
 

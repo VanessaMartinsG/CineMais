@@ -91,9 +91,6 @@
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Label>
-<<<<<<< Updated upstream
-                  <Label prefHeight="33.0" prefWidth="45.0" text="Tipo:" textFill="#999999">
-=======
                </children>
             </VBox>
             <TextField fx:id="inputQtdComum" layoutX="217.0" layoutY="303.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #202020;" />
@@ -127,16 +124,11 @@
             <VBox layoutX="411.0" layoutY="185.0" prefHeight="98.0" prefWidth="68.0">
                <children>
                   <Label prefHeight="25.0" prefWidth="55.0" text="Data:" textFill="#999999">
->>>>>>> Stashed changes
                      <font>
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>
                   </Label>
-<<<<<<< Updated upstream
-                  <Label prefHeight="32.0" prefWidth="55.0" text="Preço:" textFill="#999999">
-=======
                   <Label prefHeight="32.0" prefWidth="45.0" text="Tipo:" textFill="#999999">
->>>>>>> Stashed changes
                      <font>
                         <Font name="Comic Sans MS Bold" size="18.0" />
                      </font>

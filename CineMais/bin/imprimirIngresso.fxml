@@ -44,12 +44,12 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #181818;" VBox.vgrow="ALWAYS">
          <children>
-            <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarListaShoṕpings" style="-fx-background-color: #181818;" text="&lt;&lt;" textFill="RED">
+            <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarIngressos" style="-fx-background-color: #181818;" text="&lt;&lt;" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label layoutX="159.0" layoutY="37.0" text="FINALIZAÇÃO DA COMPRA" textFill="RED">
+            <Label layoutX="192.0" layoutY="37.0" text="IMPRIMIR INGRESSO" textFill="RED">
                <font>
                   <Font name="Comic Sans MS Bold" size="24.0" />
                </font>
@@ -101,35 +101,7 @@
                   </Label>
                </children>
             </Pane>
-            <Label layoutX="91.0" layoutY="102.0" text="Detalhes do Cliente" textFill="#999999">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="373.0" layoutY="102.0" text="Detalhes do Pedido" textFill="#999999">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="91.0" layoutY="263.0" text="Total:" textFill="#bc0202">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label fx:id="textTotal" layoutX="163.0" layoutY="263.0" prefHeight="28.0" prefWidth="78.0" text="50,00" textFill="#bc0202">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="20.0" />
-               </font>
-            </Label>
-            <Button fx:id="btnComprar" layoutX="129.0" layoutY="320.0" mnemonicParsing="false" onAction="#irCompraRealizada" prefHeight="33.0" prefWidth="127.0" style="-fx-background-color: #2d0202ff; -fx-border-color: #434343; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="COMPRAR" textFill="WHITE">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Pane layoutX="366.0" layoutY="124.0" prefHeight="266.0" prefWidth="254.0" style="-fx-background-color: #202020; -fx-background-radius: 20PX;">
+            <Pane layoutX="363.0" layoutY="124.0" prefHeight="266.0" prefWidth="254.0" style="-fx-background-color: #202020; -fx-background-radius: 20PX;">
                <children>
                   <VBox layoutX="14.0" layoutY="14.0" prefHeight="203.0" prefWidth="66.0" spacing="4.0">
                      <children>
@@ -246,6 +218,34 @@
                   </Label>
                </children>
             </Pane>
+            <Label layoutX="91.0" layoutY="102.0" text="Detalhes do Cliente" textFill="#999999">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="373.0" layoutY="102.0" text="Detalhes do Pedido" textFill="#999999">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="277.0" text="Total:" textFill="#bc0202">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="textTotal" layoutX="164.0" layoutY="277.0" prefHeight="28.0" prefWidth="78.0" text="50,00" textFill="#bc0202">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnCancelarIngresso" layoutX="98.0" layoutY="337.0" mnemonicParsing="false" onAction="#excluirIngresso" prefHeight="42.0" prefWidth="189.0" style="-fx-background-color: #202020; -fx-border-color: #710d0d; -fx-border-radius: 5px;" text="Cancelar Ingresso" textFill="RED">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
     </AnchorPane>
   </children>
