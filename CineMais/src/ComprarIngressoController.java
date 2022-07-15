@@ -3,23 +3,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import java.io.IOException;
-import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import model.Sessao;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import model.Ingresso;
 
 public class ComprarIngressoController {
@@ -179,10 +169,18 @@ public class ComprarIngressoController {
 
     @FXML
     void inserirIngresso() {
-        Ingresso ingresso = new Ingresso();;
-        double precoTotal = totalPreco();
+        Ingresso ingresso = new Ingresso();
+        ;
+      
+        
         qtdComum = Integer.parseInt(inputQtdComum.getText()); 
         qtdEstudante = Integer.parseInt(inputQtdEstudante.getText());
+        double precoTotal = totalPreco();
+        bilheteria.setPrecoTotalAtual(precoTotal);
+        bilheteria.setQtdComum(qtdComum);
+        bilheteria.setQtdEstudante(qtdEstudante);
+        System.out.println(precoTotal);
+
         
         System.out.println("AQUI FORA");
         for(int i=0; i < qtdEstudante; i++){

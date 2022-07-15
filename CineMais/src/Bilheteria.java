@@ -21,6 +21,45 @@ public class Bilheteria {
     private Sala salaSelecionada;
     // private SessaoDao sessaoDao = new SessaoDao();
     private String fds = "2022-07-09";
+    private double precoTotalAtual; 
+    private int qtdComum;
+    private int qtdEstudante;
+
+    public int getQtdComum() {
+        return qtdComum;
+    }
+
+    public void setQtdComum(int qtdComum) {
+        this.qtdComum = qtdComum;
+    }
+
+    public int getQtdEstudante() {
+        return qtdEstudante;
+    }
+
+    public void setQtdEstudante(int qtdEstudante) {
+        this.qtdEstudante = qtdEstudante;
+    }
+
+    public static void setInstance(Bilheteria instance) {
+        Bilheteria.instance = instance;
+    }
+
+    public CinemaDao getCinemaDao() {
+        return cinemaDao;
+    }
+
+    public void setCinemaDao(CinemaDao cinemaDao) {
+        this.cinemaDao = cinemaDao;
+    }
+
+    public double getPrecoTotalAtual() {
+        return precoTotalAtual;
+    }
+
+    public void setPrecoTotalAtual(double precoTotalAtual) {
+        this.precoTotalAtual = precoTotalAtual;
+    }
 
     public String getFds() {
         return fds;
