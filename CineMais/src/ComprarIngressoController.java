@@ -65,20 +65,33 @@ public class ComprarIngressoController {
 
     int qtdComum = 0;
     int qtdEstudante =  0;
+    int capacidadeSalaSelecionada =0;
+    int capacidadeOcupada;
 
     @FXML
     void irFinalizacaoCompra(ActionEvent event) throws IOException {
         Stage stage;
         Scene scene;
+    
+        qtdComum = Integer.parseInt(inputQtdComum.getText()); 
+        qtdEstudante = Integer.parseInt(inputQtdEstudante.getText());
+        int capacidadeRestante = capacidadeSalaSelecionada - capacidadeOcupada;
+        if(capacidadeOcupada < capacidadeSalaSelecionada && qtdEstudante+qtdComum < capacidadeRestante){
+            inserirIngresso();
 
+            Parent root = FXMLLoader.load(getClass().getResource("finalizacaoCompra.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root, 640, 400);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root, 640, 400);
+            stage.setScene(scene);
+            stage.show();
+        }
         
-        inserirIngresso();
-
-        Parent root = FXMLLoader.load(getClass().getResource("finalizacaoCompra.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 640, 400);
-        stage.setScene(scene);
-        stage.show();
 
     }
 
@@ -98,7 +111,9 @@ public class ComprarIngressoController {
     void initialize() {
         Sessao sessao = bilheteria.getSessaoselecionada();
         titleShopping.setText(bilheteria.getShoppingSelecionado());
-
+        capacidadeOcupada = bilheteria.ingressosVendidosSessao(sessao).size();
+        capacidadeSalaSelecionada = sessao.getSala().getCapacidade();
+        
         if (sessao.getSala().isSala3d())
             textTipo.setText("3D");
         else
@@ -181,9 +196,7 @@ public class ComprarIngressoController {
     void inserirIngresso() {
         Ingresso ingresso = new Ingresso();;
         double precoTotal = totalPreco();
-        qtdComum = Integer.parseInt(inputQtdComum.getText()); 
-        qtdEstudante = Integer.parseInt(inputQtdEstudante.getText());
-        
+        if(qtdEstudante+qtdComum < capacidadeSalaSelecionada - capacidadeOcupada)
         System.out.println("AQUI FORA");
         for(int i=0; i < qtdEstudante; i++){
             System.out.println("AQUI FORA");
