@@ -1,8 +1,10 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -79,17 +81,23 @@ public class ComprarIngressoController {
         if(capacidadeOcupada < capacidadeSalaSelecionada && qtdEstudante+qtdComum < capacidadeRestante){
             inserirIngresso();
 
-            Parent root = FXMLLoader.load(getClass().getResource("finalizacaoCompra.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root, 640, 400);
-            stage.setScene(scene);
-            stage.show();
+            if(qtdComum==0 && qtdEstudante==0){
+                Alert errorAlert = new Alert(AlertType.ERROR);
+                errorAlert.setHeaderText("Erro");
+                errorAlert.setContentText("Selecione um valor valido de quantidade de ingresso");
+                errorAlert.showAndWait();
+            }else{
+                Parent root = FXMLLoader.load(getClass().getResource("finalizacaoCompra.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root, 640, 400);
+                stage.setScene(scene);
+                stage.show();
+            }
         }else{
-            Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root, 640, 400);
-            stage.setScene(scene);
-            stage.show();
+            Alert errorAlert = new Alert(AlertType.ERROR);
+            errorAlert.setHeaderText("Erro");
+            errorAlert.setContentText("Sessao lotada para quantidade de ingressos escolhido, retorne e escolha outra sessao");
+            errorAlert.showAndWait();
         }
         
 
