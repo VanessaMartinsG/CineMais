@@ -12,7 +12,20 @@ public class Ingresso {
     private Cliente cliente;
 
 
+    public Ingresso(Ingresso ingresso){
+        this.clienteEmail = ingresso.clienteEmail;
+        this.preco = ingresso.preco;
+        this.status = ingresso.status;
+        this.idSessao = ingresso.idSessao;
+    }
 
+    public Ingresso(){
+        
+    }
+
+    public Ingresso clonePrototype(){
+        return new Ingresso(this);
+    }
 
     public int getIdingresso() {
         return idingresso;

@@ -63,13 +63,16 @@ public class ComprarIngressoController {
     @FXML
     private TextField inputQtdEstudante;
 
+    int qtdComum = 0;
+    int qtdEstudante =  0;
+
     @FXML
     void irFinalizacaoCompra(ActionEvent event) throws IOException {
         Stage stage;
         Scene scene;
 
         
-        loopIngresso();
+        inserirIngresso();
 
         Parent root = FXMLLoader.load(getClass().getResource("finalizacaoCompra.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -105,6 +108,8 @@ public class ComprarIngressoController {
         textSessao.setText(Integer.toString(sessao.getNumeroSessaoId()));
         textDuracao.setText(sessao.getFilme().getDuracao());
         textPreco.setText(Float.toString(bilheteria.getSessaoselecionada().getFilme().getPreco()));
+        textData.setText(sessao.getData());
+
     }
 
     @FXML
@@ -132,29 +137,10 @@ public class ComprarIngressoController {
 
     }
 
-
-    @FXML
-    void loopIngresso() {
-
-        int totalQtd;
-        totalQtd = Integer.parseInt(inputQtdEstudante.getText()) + Integer.parseInt(inputQtdComum.getText());
-
-        for (int x = 0; x == totalQtd; x++) {
-
-            inserirIngresso();
-
-        }
-
-        
-    }
-
     @FXML 
 
     double totalPreco() {
 
-
-        int ingressoComum = Integer.parseInt(inputQtdComum.getText()); 
-        int ingressoEstudante =  Integer.parseInt(inputQtdEstudante.getText());
         double preco = 0;
         double precoComum = bilheteria.getSessaoselecionada().getFilme().getPreco();
         double precoEstudante = bilheteria.getSessaoselecionada().getFilme().getPreco();
@@ -162,33 +148,80 @@ public class ComprarIngressoController {
         
         precoComum = is3D(precoComum);
         precoComum = isWeekend(precoComum);
-        precoComum = precoComum * ingressoComum;
+        precoComum = precoComum * qtdComum;
 
         precoEstudante = is3D(precoEstudante);
         precoEstudante = isWeekend(precoEstudante);
         precoEstudante =  precoEstudante / 2;
-        precoEstudante = precoEstudante * ingressoEstudante;
+        precoEstudante = precoEstudante * qtdEstudante;
 
         preco = precoComum + precoEstudante;
 
         return preco;
     }
 
+    public double calcPrecoEstudante(){
+        double precoEstudante = bilheteria.getSessaoselecionada().getFilme().getPreco();
+        precoEstudante = is3D(precoEstudante);
+        precoEstudante = isWeekend(precoEstudante);
+        precoEstudante =  precoEstudante / 2;
+        return precoEstudante;
+    }
+
+    public double calcPrecoPadrao(){
+        double precoPadrao = bilheteria.getSessaoselecionada().getFilme().getPreco();
+        precoPadrao = is3D(precoPadrao);
+        precoPadrao = isWeekend(precoPadrao);
+        return precoPadrao;
+    }
+
 
 
     @FXML
     void inserirIngresso() {
-
+        Ingresso ingresso = new Ingresso();;
         double precoTotal = totalPreco();
+        qtdComum = Integer.parseInt(inputQtdComum.getText()); 
+        qtdEstudante = Integer.parseInt(inputQtdEstudante.getText());
+        
+        System.out.println("AQUI FORA");
+        for(int i=0; i < qtdEstudante; i++){
+            System.out.println("AQUI FORA");
+            if(i == 0){
+                System.out.println("AQUI DENTRO");
+                ingresso.setClienteEmail(bilheteria.getClienteSelecionado().getEmail());
+                ingresso.setPreco(calcPrecoEstudante());
+                ingresso.setStatus("Vendido");
+                ingresso.setIdSessao(bilheteria.getSessaoselecionada().getNumeroSessaoId());
+                bilheteria.cadastrarIngresso(ingresso); 
+            }else{
+                bilheteria.cadastrarIngresso(ingresso.clonePrototype());
+            }
+            
+        }
 
-        Ingresso ingresso = new Ingresso();
+        for(int i=0; i < qtdComum; i++){
+            System.out.println("AQUI FORA");
+            if(i == 0){
+                System.out.println("AQUI EU");
+                ingresso.setClienteEmail(bilheteria.getClienteSelecionado().getEmail());
+                ingresso.setPreco( calcPrecoPadrao());
+                ingresso.setStatus("Vendido");
+                ingresso.setIdSessao(bilheteria.getSessaoselecionada().getNumeroSessaoId());
+                bilheteria.cadastrarIngresso(ingresso); 
+            }else{
+                bilheteria.cadastrarIngresso(ingresso.clonePrototype());
+            }
+        }
 
-        ingresso.setClienteEmail(bilheteria.getClienteSelecionado().getEmail());
-        ingresso.setPreco(precoTotal);
-        ingresso.setStatus("Vendido");
-        ingresso.setIdSessao(bilheteria.getSessaoselecionada().getNumeroSessaoId());
+        // Ingresso ingresso = new Ingresso();
 
-        bilheteria.cadastrarIngresso(ingresso);
+        // ingresso.setClienteEmail(bilheteria.getClienteSelecionado().getEmail());
+        // ingresso.setPreco(precoTotal);
+        // ingresso.setStatus("Vendido");
+        // ingresso.setIdSessao(bilheteria.getSessaoselecionada().getNumeroSessaoId());
+
+        //bilheteria.cadastrarIngresso(ingresso);
 
     }
 

@@ -79,9 +79,10 @@ public class ClienteDao {
         
 
                 cliente.setNome(rs.getString("nome"));
-                cliente.setIdade(rs.getInt("idade"));
                 cliente.setEstudante(rs.getBoolean("estudante"));
-
+                cliente.setIdade(rs.getInt("idade"));
+                cliente.setEmail(rs.getString("email"));
+                cliente.setSenha(rs.getString("senha"));
             }
 
             this.conn.close();
