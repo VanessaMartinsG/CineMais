@@ -88,6 +88,11 @@ public class Bilheteria {
         ingressoDao.insert(ingresso);
     }
 
+    public List<Ingresso> ingressosVendidosSessao(Sessao sessao){
+        IngressoDao ingressoDao = new IngressoDao();
+        return ingressoDao.select(sessao);
+    }
+
     public String getShoppingSelecionado(){
         return this.shoppingSelecionado;
     }
