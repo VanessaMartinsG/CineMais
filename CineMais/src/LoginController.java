@@ -1,9 +1,13 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import dao.ClienteDao;
 import javafx.application.Application;
@@ -20,7 +24,7 @@ import model.Cliente;
 import javafx.fxml.FXML;
 
 public class LoginController {
-
+    Bilheteria bilheteria = Bilheteria.getInstance();
     @FXML
     private Button btnBackLogin;
 
@@ -37,35 +41,43 @@ public class LoginController {
     private TextField inputSenha;
 
 
+
     @FXML
     void fazerLogin(ActionEvent event) throws IOException {
+
+        Alert errorAlert = new Alert(AlertType.ERROR);
+        ArrayList<Cliente> cadastrados = new ArrayList<Cliente>();
         Cliente cliente = new Cliente();
         cliente.setEmail(inputEmail.getText());
+        cliente.setSenha(inputSenha.getText());
         ClienteDao clienteDao = new ClienteDao();
-        cliente = clienteDao.select(cliente);
+        cadastrados = clienteDao.selectAll();
 
-        // verifica se o usuario existe no json
-        Bilheteria bilheteria = Bilheteria.getInstance();
-        bilheteria.setClienteSelecionado(cliente);
-        //bilheteria.getDb().initDb();
-        //bilheteria.listaDbInterface();
-        
-        
-    //    String emailTF = inputEmail.getText();
-    //    String senhaTF = inputSenha.getText();
+        for (int i = 0; i < cadastrados.size(); i++) {
+            if (cadastrados.get(i).getEmail().equals(cliente.getEmail())) {
+                if (cadastrados.get(i).getSenha().equals(cliente.getSenha())) {
+                    Stage stage;
+                    Scene scene;
+                    bilheteria.setClienteSelecionado(cadastrados.get(i));
+                    Parent root = FXMLLoader.load(getClass().getResource("listaShoppings.fxml"));
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    scene = new Scene(root, 640, 400);
+                    stage.setScene(scene);
+                    stage.show();
+                    return;
+                } else {
+                    errorAlert.setHeaderText("ERROR!");
+                    errorAlert.setContentText("Senha Incorreta! Tente novamente...");
+                    errorAlert.showAndWait();
+                    return;
+                }
+            }
+        }
 
-    //    String emailDB = bilheteria.getDb().getEmail();
-    //    String senhaDB = bilheteria.getDb().getSenha();
+        errorAlert.setHeaderText("ERROR!");
+        errorAlert.setContentText("Email não cadastrado! Tente novamente...");
+        errorAlert.showAndWait();
 
-        Stage stage;
-        Scene scene;
-
-        Parent root = FXMLLoader.load(getClass().getResource("listaShoppings.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 640, 400);
-        stage.setScene(scene);
-        stage.show();
-          
     }
 
     @FXML
