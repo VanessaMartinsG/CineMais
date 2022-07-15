@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Ingresso;
+import model.Sessao;
 
 public class IngressoDao {
     private Connection conn;
@@ -13,6 +16,36 @@ public class IngressoDao {
 
     public IngressoDao(){
         this.conn = DataBase.getInstance().initDb();
+    }
+
+    public List<Ingresso> select(Sessao sessao){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<Ingresso> ingressosLista = new ArrayList<>();
+        try {
+            stmt = this.conn.prepareStatement("SELECT * FROM " + this.Table + " WHERE idSessao like ?");
+            stmt.setInt(1, sessao.getNumeroSessaoId());
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Ingresso ingresso = new Ingresso();
+                ingresso.setClienteEmail(rs.getString("clienteEmail"));
+                ingresso.setPreco(rs.getDouble("preco"));
+                ingresso.setStatus(rs.getString("status"));
+                ingresso.setIdSessao(rs.getInt("idSessao"));
+
+                ingressosLista.add(ingresso);
+            }
+
+            this.conn.close();
+            stmt.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return ingressosLista;
     }
 
     public boolean insert(Ingresso ingresso) {
