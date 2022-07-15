@@ -63,12 +63,14 @@ public class FilmesEmCartazController {
     private TextField inputMes;
 
     @FXML
+    private Button btnPerfil;
+
+    @FXML
     private Label lblFromController1;
     Bilheteria bilheteria = Bilheteria.getInstance();
 
     @FXML
     void irIngresso01(ActionEvent event) throws IOException {
-
 
     }
 
@@ -126,10 +128,10 @@ public class FilmesEmCartazController {
 
     @FXML
     void initialize() {
-        
+
         titleShopping.setText(bilheteria.getShoppingSelecionado());
         int shoppingId = -1;
-        switch (bilheteria.getShoppingSelecionado()){
+        switch (bilheteria.getShoppingSelecionado()) {
             case "Shopping Salvador":
                 shoppingId = 1;
                 break;
@@ -238,8 +240,8 @@ public class FilmesEmCartazController {
     }
 
     @FXML
-    void procurarPorData(ActionEvent event)  throws IOException {
-         Stage stage;
+    void procurarPorData(ActionEvent event) throws IOException {
+        Stage stage;
         Scene scene;
 
         Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
@@ -249,7 +251,7 @@ public class FilmesEmCartazController {
         stage.show();
     }
 
-    void sessaoSelecionada(Sessao sessao, ActionEvent event) throws IOException{
+    void sessaoSelecionada(Sessao sessao, ActionEvent event) throws IOException {
         bilheteria.setSessaoselecionada(sessao);
         System.out.println(sessao.getFilme().getNomeFilme() + "sessão selecionada");
 
@@ -261,8 +263,12 @@ public class FilmesEmCartazController {
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
         stage.show();
-    } 
+    }
 
+    @FXML
+    void menuPerfil(ActionEvent event) {
+
+<<<<<<< HEAD
     @FXML
     void menuPerfil(ActionEvent event) throws IOException {
 
@@ -279,5 +285,8 @@ public class FilmesEmCartazController {
              
     }
 
+=======
+    }
+>>>>>>> 04c3da55acc56df20807cf2044f4573c80e0288e
 
 }

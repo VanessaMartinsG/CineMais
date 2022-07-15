@@ -56,7 +56,10 @@ public class finalizacaoCompraController {
     private Label textTipo;
 
     @FXML
-    private Label textQtd;
+    private Label textQtdComum;
+
+    @FXML
+    private Label textQtdEstudante;
 
     @FXML
     void voltarListaShoppings(ActionEvent event) throws IOException {
@@ -73,6 +76,17 @@ public class finalizacaoCompraController {
     @FXML
     void irCompraRealizada(ActionEvent event) throws IOException {
 
+<<<<<<< HEAD
+=======
+        Ingresso ingresso = new Ingresso();
+        ingresso.setCliente(bilheteria.getClienteSelecionado());
+        ingresso.setPreco(bilheteria.getSessaoselecionada().getFilme().getPreco());
+        ingresso.setSessao(bilheteria.getSessaoselecionada());
+        ingresso.setDuracao(textDuracao.getText());
+        ingresso.setPreco(bilheteria.getSessaoselecionada().getFilme().getPreco());
+        bilheteria.cadastrarIngresso(ingresso);
+
+>>>>>>> 04c3da55acc56df20807cf2044f4573c80e0288e
         Stage stage;
         Scene scene;
 
@@ -96,7 +110,11 @@ public class finalizacaoCompraController {
 
         textFilme.setText(sessao.getFilme().getNomeFilme());
         textSessao.setText(Integer.toString(sessao.getNumeroSessaoId()));
+<<<<<<< HEAD
         textDia.setText(bilheteria.getSessaoselecionada().getData());
+=======
+        textDia.setText(sessao.getData());
+>>>>>>> 04c3da55acc56df20807cf2044f4573c80e0288e
         textSala.setText(Integer.toString(sessao.getSala().getNumero()));
         textDuracao.setText(sessao.getFilme().getDuracao());
         textHorario.setText(sessao.getHorario());

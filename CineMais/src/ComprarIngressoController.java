@@ -34,12 +34,15 @@ public class ComprarIngressoController {
     private Button btnContinuar;
 
     @FXML
+<<<<<<< HEAD
     private TextField inputQtdEstudante;
 
     @FXML
     private TextField inputQtdComum;
 
     @FXML
+=======
+>>>>>>> 04c3da55acc56df20807cf2044f4573c80e0288e
     private Label textDuracao;
 
     @FXML
@@ -58,7 +61,17 @@ public class ComprarIngressoController {
     private Label titleShopping;
 
     @FXML
+<<<<<<< HEAD
     private TextField inputIdade;
+=======
+    private Label textData;
+
+    @FXML
+    private TextField inputQtdComum;
+
+    @FXML
+    private TextField inputQtdEstudante;
+>>>>>>> 04c3da55acc56df20807cf2044f4573c80e0288e
 
     @FXML
     void irFinalizacaoCompra(ActionEvent event) throws IOException {
@@ -104,6 +117,7 @@ public class ComprarIngressoController {
         textPreco.setText(Float.toString(bilheteria.getSessaoselecionada().getFilme().getPreco()));
     }
 
+<<<<<<< HEAD
     @FXML
     double isWeekend(double preco) {
 
@@ -189,4 +203,6 @@ public class ComprarIngressoController {
 
     }
 
+=======
+>>>>>>> 04c3da55acc56df20807cf2044f4573c80e0288e
 }
