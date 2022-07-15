@@ -79,10 +79,7 @@ public class ListaShoppingsControllers {
 
     @FXML
     void abrirShoppingSalvador(ActionEvent event) throws IOException {
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
         Stage stage;
         Scene scene;
         bilheteria.setShoppingSelecionado("Shopping Salvador");
@@ -108,18 +105,17 @@ public class ListaShoppingsControllers {
 
     @FXML
     void menuPerfil(ActionEvent event) throws IOException {
+
+        
         Stage stage;
         Scene scene;
-        Parent root;
-        if (bilheteria.getClienteSelecionado() != null) {
-            root = FXMLLoader.load(getClass().getResource("perfil.fxml"));
-        } else {
-            root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        }
+
+        Parent root = FXMLLoader.load(getClass().getResource("perfil.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
         stage.show();
+             
+             
     }
-
 }

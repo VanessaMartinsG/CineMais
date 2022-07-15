@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import dao.ClienteDao;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import model.Cliente;
 import javafx.fxml.FXML;
 
 public class LoginController {
@@ -37,8 +39,14 @@ public class LoginController {
 
     @FXML
     void fazerLogin(ActionEvent event) throws IOException {
+        Cliente cliente = new Cliente();
+        cliente.setEmail(inputEmail.getText());
+        ClienteDao clienteDao = new ClienteDao();
+        cliente = clienteDao.select(cliente);
+
         // verifica se o usuario existe no json
         Bilheteria bilheteria = Bilheteria.getInstance();
+        bilheteria.setClienteSelecionado(cliente);
         //bilheteria.getDb().initDb();
         //bilheteria.listaDbInterface();
         
@@ -52,7 +60,7 @@ public class LoginController {
         Stage stage;
         Scene scene;
 
-        Parent root = FXMLLoader.load(getClass().getResource("filmesEmCartaz.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("listaShoppings.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
@@ -76,8 +84,15 @@ public class LoginController {
     }
 
     @FXML
-    void irParaCadastro(ActionEvent event) {
-        
+    void irParaCadastro(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
+
+        Parent root = FXMLLoader.load(getClass().getResource("cadastro.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 640, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

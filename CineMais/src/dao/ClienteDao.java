@@ -42,12 +42,15 @@ public class ClienteDao {
             // Passagem de parametros
             stmt = this.conn.prepareStatement(
                     "INSERT INTO " + this.Table
-                            + "(cpf,nome,estudante,idade) VALUES(?,?,?,?)",
+                            + "(nome,estudante,idade,email,senha) VALUES(?,?,?,?,?)",
                     PreparedStatement.RETURN_GENERATED_KEYS);
-            stmt.setInt(1, cliente.getCpf());
-            stmt.setString(2, cliente.getNome());
-            stmt.setBoolean(3, cliente.isEstudante());
-            stmt.setInt(4, cliente.getIdade());
+            stmt.setString(1, cliente.getNome());
+            stmt.setBoolean(2, cliente.isEstudante());
+            stmt.setInt(3, cliente.getIdade());
+            stmt.setString(4, cliente.getEmail());
+            stmt.setString(5, cliente.getSenha());
+            
+            
 
             // Execução da SQL
             stmt.executeUpdate();
@@ -59,5 +62,36 @@ public class ClienteDao {
             throw new RuntimeException(e);
         }
         return true;
+    }
+
+    public Cliente select(Cliente cliente) {
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+
+        try {
+            stmt = this.conn.prepareStatement("SELECT * FROM " + this.Table + " WHERE email like ?");
+            stmt.setString(1, cliente.getEmail());
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+        
+
+                cliente.setNome(rs.getString("nome"));
+                cliente.setEstudante(rs.getBoolean("estudante"));
+                cliente.setIdade(rs.getInt("idade"));
+                cliente.setEmail(rs.getString("email"));
+                cliente.setSenha(rs.getString("senha"));
+            }
+
+            this.conn.close();
+            stmt.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return cliente;
     }
 }

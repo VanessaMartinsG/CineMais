@@ -5,13 +5,19 @@ public class Cliente {
     private String nome;
     private boolean estudante;
     private int idade;
+    private String email;
+    private String senha;
     private Ingresso ingresso;
 
-    public Cliente(int cpf,String nome, boolean estudante, int idade) {
-        this.cpf = cpf;
-        this.nome = nome;
-        this.estudante = estudante;
-        this.idade = idade;
+    public Ingresso getIngresso() {
+        return ingresso;
+    }
+
+    public void setIngresso(Ingresso ingresso) {
+        this.ingresso = ingresso;
+    }
+
+    public Cliente() {
     }
 
     public int getCpf(){
@@ -46,6 +52,21 @@ public class Cliente {
         this.idade = idade;
     }
 
-    
+    public String getEmail(){
+        return this.email;
+    }
+
+    public void setEmail(String novoEmail){
+        this.email = novoEmail;
+    }
+
+    public String getSenha(){
+        return this.senha;
+    }
+
+    public void setSenha(String novaSenha){
+        this.senha = novaSenha;
+    }
+
 
 }

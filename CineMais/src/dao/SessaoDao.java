@@ -80,6 +80,7 @@ public class SessaoDao {
                 filme.setIdFilme(rs.getInt("filmeId"));
                 FilmeDao fDao = new FilmeDao();
                 sessao.setFilme(fDao.select(filme));
+                
 
                 Sala sala = new Sala();
                 sala.setIdSala(rs.getInt("salaId"));
@@ -122,6 +123,8 @@ public class SessaoDao {
                 filme.setIdFilme(rs.getInt("filmeId"));
                 FilmeDao fDao = new FilmeDao();
                 sessao.setFilme(fDao.select(filme));
+                sessoes.add(sessao);
+            
 
             }
 
@@ -133,6 +136,48 @@ public class SessaoDao {
         }
 
         return sessoes;
+    }
+
+    public Sessao select(Sessao sessao) {
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Sessao> sessoes = new ArrayList<>();
+
+        try {
+            stmt = this.conn.prepareStatement("SELECT * FROM " + this.Table + " WHERE numero=?");
+            stmt.setInt(1, sessao.getNumeroSessaoId());
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+        
+
+                sessao.setNumeroSessaoId(rs.getInt("numero"));
+                sessao.setHorario(rs.getString("horario"));
+                
+
+                Filme filme = new Filme();
+                filme.setIdFilme(rs.getInt("filmeId"));
+                FilmeDao fDao = new FilmeDao();
+                sessao.setFilme(fDao.select(filme));
+
+                Sala sala = new Sala();
+                sala.setIdSala(rs.getInt("salaId"));
+                SalaDao fSalaDao = new SalaDao();
+                sessao.setSala(fSalaDao.select(sala));
+                sessao.setData(rs.getString("data"));
+
+            }
+
+            this.conn.close();
+            stmt.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return sessao;
     }
 
 }

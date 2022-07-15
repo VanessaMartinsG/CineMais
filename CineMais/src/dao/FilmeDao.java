@@ -64,6 +64,7 @@ public class FilmeDao {
                 filme.setDuracao(rs.getString("duracao"));
                 filme.setFaixaEtaria(rs.getInt("faixaEtaria"));
                 filme.setCategoria(rs.getString("categoria"));
+                filme.setPreco(rs.getFloat("preco"));
             }
 
             this.conn.close();
