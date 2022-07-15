@@ -23,17 +23,20 @@ public class homeController {
     @FXML
     private Button btnPerfil;
 
-    @FXML
-    void menuPerfil(ActionEvent event) {
+    Bilheteria bilheteria = Bilheteria.getInstance();
 
-    }
 
     @FXML
     void GoToLogin(ActionEvent event) throws IOException {
         Stage stage;
         Scene scene;
 
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent root;
+        if(bilheteria.getClienteSelecionado() != null){
+            root = FXMLLoader.load(getClass().getResource("listaShoppings.fxml"));    
+       }else{
+            root = FXMLLoader.load(getClass().getResource("login.fxml"));
+       }
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);

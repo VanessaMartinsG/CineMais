@@ -17,7 +17,7 @@ public class Bilheteria {
     private String shoppingSelecionado;
     private CinemaDao cinemaDao = new CinemaDao();
     private Sessao sessaoselecionada;
-    private Cliente clienteSelecionado;
+    private Cliente clienteSelecionado = null;
     private Sala salaSelecionada;
     // private SessaoDao sessaoDao = new SessaoDao();
     private String fds = "2022-07-09";

@@ -104,7 +104,6 @@ public class ListaShoppingsControllers {
     }
 
     @FXML
-<<<<<<< HEAD
     void menuPerfil(ActionEvent event) throws IOException {
 
         
@@ -119,10 +118,4 @@ public class ListaShoppingsControllers {
              
              
     }
-=======
-    void menuPerfil(ActionEvent event) {
-
-    }
-
->>>>>>> 04c3da55acc56df20807cf2044f4573c80e0288e
 }
