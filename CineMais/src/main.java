@@ -17,7 +17,7 @@ public class main extends Application{
     private Button btnFilmesCartaz;
 
     public static void main(String[] args) throws Exception {
-        System.out.println("teste");
+        
         Bilheteria bilheteria = Bilheteria.getInstance();
         
         bilheteria.getCinemas();

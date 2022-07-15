@@ -149,7 +149,7 @@ public class FilmesEmCartazController {
         }
 
          dateFormated = "2022-"+inputMes.getText()+"-"+inputDia.getText();
-        System.out.print(dateFormated);
+       
         final List<Sessao> sessoes = bilheteria.getSessaoByDateAndShop(dateFormated, shoppingId);
         filme1.setText(sessoes.get(0).getFilme().getNomeFilme());
         filme2.setText(sessoes.get(2).getFilme().getNomeFilme());

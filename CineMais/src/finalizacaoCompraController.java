@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
@@ -62,6 +63,15 @@ public class finalizacaoCompraController {
     private Label textQtdEstudante;
 
     @FXML
+    private Label textTotal;
+
+    @FXML
+    private TextField inputQtdComum;
+
+    @FXML
+    private TextField inputQtdEstudante;
+
+    @FXML
     void voltarListaShoppings(ActionEvent event) throws IOException {
         Stage stage;
         Scene scene;
@@ -89,6 +99,7 @@ public class finalizacaoCompraController {
     @FXML
     void initialize() {
         Sessao sessao = bilheteria.getSessaoselecionada();
+
         textNome.setText(bilheteria.getClienteSelecionado().getNome());
         textEmail.setText(bilheteria.getClienteSelecionado().getEmail());
         textIdade.setText(Integer.toString(bilheteria.getClienteSelecionado().getIdade()));
@@ -104,6 +115,11 @@ public class finalizacaoCompraController {
         textSala.setText(Integer.toString(sessao.getSala().getNumero()));
         textDuracao.setText(sessao.getFilme().getDuracao());
         textHorario.setText(sessao.getHorario());
+        
+        textTotal.setText(Double.toString(bilheteria.getPrecoTotalAtual()));
+        textValor.setText(Double.toString(bilheteria.getPrecoTotalAtual()));
+        textQtdComum.setText(Integer.toString(bilheteria.getQtdComum()));
+        textQtdEstudante.setText(Integer.toString(bilheteria.getQtdEstudante()));
 
         if (sessao.getSala().isSala3d())
             textTipo.setText("3D");

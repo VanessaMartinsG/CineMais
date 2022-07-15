@@ -194,14 +194,18 @@ public class ComprarIngressoController {
 
     @FXML
     void inserirIngresso() {
-        Ingresso ingresso = new Ingresso();;
+        Ingresso ingresso = new Ingresso();
         double precoTotal = totalPreco();
-        if(qtdEstudante+qtdComum < capacidadeSalaSelecionada - capacidadeOcupada)
-        System.out.println("AQUI FORA");
+    
+        bilheteria.setPrecoTotalAtual(precoTotal);
+        bilheteria.setQtdComum(qtdComum);
+        bilheteria.setQtdEstudante(qtdEstudante);
+        
+    
         for(int i=0; i < qtdEstudante; i++){
-            System.out.println("AQUI FORA");
+            
             if(i == 0){
-                System.out.println("AQUI DENTRO");
+                
                 ingresso.setClienteEmail(bilheteria.getClienteSelecionado().getEmail());
                 ingresso.setPreco(calcPrecoEstudante());
                 ingresso.setStatus("Vendido");
@@ -214,9 +218,9 @@ public class ComprarIngressoController {
         }
 
         for(int i=0; i < qtdComum; i++){
-            System.out.println("AQUI FORA");
+           
             if(i == 0){
-                System.out.println("AQUI EU");
+                
                 ingresso.setClienteEmail(bilheteria.getClienteSelecionado().getEmail());
                 ingresso.setPreco( calcPrecoPadrao());
                 ingresso.setStatus("Vendido");

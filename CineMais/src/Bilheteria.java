@@ -21,6 +21,45 @@ public class Bilheteria {
     private Sala salaSelecionada;
     // private SessaoDao sessaoDao = new SessaoDao();
     private String fds = "2022-07-09";
+    private double precoTotalAtual; 
+    private int qtdComum;
+    private int qtdEstudante;
+
+    public int getQtdComum() {
+        return qtdComum;
+    }
+
+    public void setQtdComum(int qtdComum) {
+        this.qtdComum = qtdComum;
+    }
+
+    public int getQtdEstudante() {
+        return qtdEstudante;
+    }
+
+    public void setQtdEstudante(int qtdEstudante) {
+        this.qtdEstudante = qtdEstudante;
+    }
+
+    public static void setInstance(Bilheteria instance) {
+        Bilheteria.instance = instance;
+    }
+
+    public CinemaDao getCinemaDao() {
+        return cinemaDao;
+    }
+
+    public void setCinemaDao(CinemaDao cinemaDao) {
+        this.cinemaDao = cinemaDao;
+    }
+
+    public double getPrecoTotalAtual() {
+        return precoTotalAtual;
+    }
+
+    public void setPrecoTotalAtual(double precoTotalAtual) {
+        this.precoTotalAtual = precoTotalAtual;
+    }
 
     public String getFds() {
         return fds;
@@ -65,17 +104,12 @@ public class Bilheteria {
     public void getCinemas(){
         List<Cinema> cinemas = new ArrayList<>();
         cinemas = cinemaDao.select();
-        for (int i = 0; i < cinemas.size(); i++) {
-            System.out.print(cinemas.get(i).getNome());
-            //this.cinemas.add(new Cinema("CineMais", shoppings.get(i).toString()));
-        }
     }
 
     public List<Sessao> getSessaoByDateAndShop(String data, int cinemaId){
         SessaoDao sessaoDao = new SessaoDao();
         List<Sessao> sessoes=  sessaoDao.select(data, cinemaId);
-        for(Sessao sessao: sessoes)
-            System.out.println(sessao.getFilme().getNomeFilme()+ " " + cinemaId);
+        
         return sessoes;
     }
     public void cadastrarCliente(Cliente cliente){

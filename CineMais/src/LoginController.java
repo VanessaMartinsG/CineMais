@@ -65,22 +65,7 @@ public class LoginController {
         scene = new Scene(root, 640, 400);
         stage.setScene(scene);
         stage.show();
-    //    if(emailTF.equals(emailDB)){
-    //         if(senhaTF.equals(senhaDB)){
-                
-
-
-    //         }
-    //         else{
-    //             System.out.println("Senha errada");
-    //         }
-    //     }else{
-    //         System.out.println("Email erradao");
-    //     }
-    
-        
-
-       
+          
     }
 
     @FXML
